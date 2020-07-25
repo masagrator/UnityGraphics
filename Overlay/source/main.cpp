@@ -50,7 +50,7 @@ public:
 			}
 			else {
 				if (Utils::MAGIC == 0x16BA7E38) renderer->drawString("UnityGraphics plugin is running.", false, x, y+20, 20, renderer->a(0xFFFF));
-				else if (Utils::MAGIC != 0x16BA7E38) renderer->drawString("WRONG Utils::MAGIC!", false, x, y+20, 20, renderer->a(0xF33F));
+				else if (Utils::MAGIC != 0x16BA7E38) renderer->drawString("WRONG MAGIC!", false, x, y+20, 20, renderer->a(0xF33F));
 			}
 	}), 70);
 
