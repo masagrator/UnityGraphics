@@ -178,7 +178,6 @@ public:
 							Utils::dmnt_cht = false;
 							return;
 						}
-						Utils::settings = 1;
 						Utils::PluginRunning = true;
 				}
 			else Utils::dmnt_cht = false;
