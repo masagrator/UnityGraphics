@@ -430,7 +430,7 @@ namespace dmntcht {
 		dmntchtWriteCheatProcessMemory(Utils::settings_address, &Utils::settings, 0x1);
 		dmntchtWriteCheatProcessMemory(Utils::switchcase_address, &Utils::switchcase, 0x1);
 		svcSleepThread((1000*1000*1000)/30);
-		Utils::switchcase = 63;
+		Utils::switchcase = 64;
 		dmntchtWriteCheatProcessMemory(Utils::settings_address, &Utils::settings, 0x1);
 		dmntchtWriteCheatProcessMemory(Utils::switchcase_address, &Utils::switchcase, 0x1);
 		Utils::switchcase = 0;
