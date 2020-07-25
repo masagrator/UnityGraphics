@@ -2,7 +2,7 @@
 
 This is a combination of SaltyNX plugin and Tesla overlay that allows to modify in real time graphics settings in games using Unity engine.
 
-![screen](https://github.com/masagrator/UnityGraphicsManager/blob/master/Screen.jpg?raw=true)
+![screen](https://github.com/masagrator/UnityGraphics/blob/master/Screen.jpg?raw=true)
 
 Requirements:
 - Atmosphere (This is related to dmnt:cht that allows homebrews for reading build_id of running games. SX OS doesn't provide this info). Not tested on ReinX
