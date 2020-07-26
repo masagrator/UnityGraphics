@@ -10,6 +10,8 @@ Requirements:
 - SaltyNX
 - File with offsets dedicated to game (you can find storage here: https://github.com/masagrator/UnityGraphicsWarehouse)
 
+---
+
 For now UnityGraphics supports only:
 - Quality category excluding:
 
