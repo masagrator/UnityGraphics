@@ -16,8 +16,8 @@ tsl::elm::Element *SetResolution::createUI() {
 }), 25);
 
 	list2->addItem(new tsl::elm::CategoryHeader("Options"));
-	auto *clickableListItem = new tsl::elm::ListItem("640x360");
-	clickableListItem->setClickListener([](u64 keys) { 
+	auto *clickableListItem1 = new tsl::elm::ListItem("640x360");
+	clickableListItem1->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
 			Utils::width = 640;
 			Utils::height = 360;
@@ -28,24 +28,8 @@ tsl::elm::Element *SetResolution::createUI() {
 		return false;
 	});	
 	
-	list2->addItem(clickableListItem);
-
-	list2->addItem(new tsl::elm::CategoryHeader("Options"));
-	auto *clickableListItem1 = new tsl::elm::ListItem("854x480");
-	clickableListItem1->setClickListener([](u64 keys) { 
-		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-			Utils::width = 854;
-			Utils::height = 480;
-			dmntcht::write_SetResolution();
-		return true;
-		}
-
-		return false;
-	});		
-	
 	list2->addItem(clickableListItem1);
 
-	list2->addItem(new tsl::elm::CategoryHeader("Options"));
 	auto *clickableListItem2 = new tsl::elm::ListItem("960x540");
 	clickableListItem2->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {

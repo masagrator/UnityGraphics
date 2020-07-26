@@ -574,30 +574,30 @@ namespace Utils {
 						ptr_function = __builtin_bswap32((uint32_t)ptr_function);
 						ptr_function = ptr_function + dmnt_metadata.main_nso_extents.base;
 					}
+					fread(&address_function, 0x5, 1, offset);
+					if (address_function != 0 && ptr_function != 0) dmntchtWriteCheatProcessMemory(address_function, &ptr_function, 0x5);
 					else {
 						error = i * 2;
 						if (i > 9) error = error + 2;
 						if (i > 27) error++;
 						nullify::Quality(error);
 					}
-					fread(&address_function, 0x5, 1, offset);
-					if (error == 0) dmntchtWriteCheatProcessMemory(address_function, &ptr_function, 0x5);
 					//set
-					error = 0;
 					ptr_function = 0;
+					address_function = 0;
 					fread(&ptr_function, 0x4, 1, __BID_File);
 					if (ptr_function != 0) {
 						ptr_function = __builtin_bswap32((uint32_t)ptr_function);
 						ptr_function = ptr_function + dmnt_metadata.main_nso_extents.base;
 					}
+					fread(&address_function, 0x5, 1, offset);
+					if (address_function != 0 && ptr_function != 0) dmntchtWriteCheatProcessMemory(address_function, &ptr_function, 0x5);
 					else {
 						error = i * 2;
 						if (i > 9) error = error + 2;
 						if (i > 27) error++;
 						nullify::Quality(error);
 					}
-					fread(&address_function, 0x5, 1, offset);
-					if (error == 0) dmntchtWriteCheatProcessMemory(address_function, &ptr_function, 0x5);
 				}
 				
 				///Read offsets for Screen settings, add main base address to pointers and inject them to game code
