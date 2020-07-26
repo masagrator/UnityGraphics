@@ -7,6 +7,7 @@
 #include "dmntchtWrite.hpp"
 #include "Utils.hpp"
 #include "UnityQuality.hpp"
+#include "UnityScreen.hpp"
 
 bool SaltySD = false;
 bool bak = false;
@@ -67,6 +68,17 @@ public:
 			});
 
 			list->addItem(Qualityauto);
+			
+			auto *Screenauto = new tsl::elm::ListItem("Screen");
+			Screenauto->setClickListener([](u64 keys) { 
+				if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
+					tsl::changeTo<ScreenSettings>();
+					return true;
+				}
+				return false;
+			});
+
+			list->addItem(Screenauto);
 		}
 		
 		else if (SaltySD == true && plugin == true && Utils::check == false) {

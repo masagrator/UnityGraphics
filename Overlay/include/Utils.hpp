@@ -14,6 +14,7 @@ namespace Utils {
 	extern bool check;
 	extern bool Quality_read;
 	extern bool notsupported;
+	extern bool Screen_read;
 
 	extern uint32_t MAGIC;
 	
@@ -21,6 +22,5 @@ namespace Utils {
 	
 	bool CheckPort ();
 	bool isServiceRunning(const char *serviceName);
-	void readValues(void*);
 }
 

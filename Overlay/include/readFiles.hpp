@@ -52,6 +52,9 @@ namespace Utils {
 	extern uintptr_t streamingMipmapsMaxFileIORequests_address;
 	extern uintptr_t maxQueuedFrames_address;
 	
+	extern uintptr_t width_address;
+	extern uintptr_t height_address;
+	
 	extern uint32_t pixelLightCount;
 	extern uint32_t ShadowQuality;
 	extern uint32_t ShadowProjection;
@@ -83,6 +86,9 @@ namespace Utils {
 	extern bool streamingMipmapsAddAllCameras;
 	extern uint32_t streamingMipmapsMaxFileIORequests;
 	extern uint32_t maxQueuedFrames;
+	
+	extern uint32_t width;
+	extern uint32_t height;
 	
 	extern char BID_File[192];
 	extern char BID_File2[196];

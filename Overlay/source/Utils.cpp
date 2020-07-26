@@ -10,6 +10,7 @@ namespace Utils {
 	bool check = false;
 	bool Quality_read = false;
 	bool notsupported = false;
+	bool Screen_read = false;
 
 	uint32_t MAGIC = 0x0;
 	

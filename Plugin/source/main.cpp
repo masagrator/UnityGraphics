@@ -67,6 +67,7 @@ void __attribute__((weak)) NORETURN __libnx_exit(int rc) {
 void SleepThread(void* unknown) {
 	if (Utils::switchcase == 0) return _ZN2nn2os11SleepThreadENS_8TimeSpanE(unknown);
 	else if (Utils::_settings == Utils::Quality) UnitySettings::Quality::Change(Utils::switchcase);
+	else if (Utils::_settings == Utils::Screen) UnitySettings::Screen::Change(Utils::switchcase);
 	
 	Utils::switchcase = 0;
 	

@@ -34,6 +34,8 @@ namespace dmntcht {
 			dmntchtReadCheatProcessMemory(Utils::streamingMipmapsAddAllCameras_address, &Utils::streamingMipmapsAddAllCameras, 0x1);
 			dmntchtReadCheatProcessMemory(Utils::streamingMipmapsMaxFileIORequests_address, &Utils::streamingMipmapsMaxFileIORequests, 0x4);
 			dmntchtReadCheatProcessMemory(Utils::maxQueuedFrames_address, &Utils::maxQueuedFrames, 0x4);
+			dmntchtReadCheatProcessMemory(Utils::width_address, &Utils::width, 0x4);
+			dmntchtReadCheatProcessMemory(Utils::height_address, &Utils::height, 0x4);
 	}
 }
 

@@ -3,6 +3,7 @@
 #include "readFiles.hpp"
 
 namespace dmntcht {
+	///Quality
 	void write_pixelLightCount();
 	void write_shadows();
 	void write_shadowProjection();
@@ -34,4 +35,7 @@ namespace dmntcht {
 	void write_streamingMipmapsAddAllCameras();
 	void write_streamingMipmapsMaxFileIORequests();
 	void write_maxQueuedFrames();
+	
+	///Screen
+	void write_SetResolution();
 }

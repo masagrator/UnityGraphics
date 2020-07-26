@@ -351,6 +351,86 @@ namespace nullify {
 				break;
 		}
 	}
+	
+	void Screen (uint8_t m_switchcase) {
+		switch(m_switchcase) {
+
+			//"UnityEngine.Screen::get_width"
+			case 1:
+				Utils::width_address = 0x0;
+				break;
+
+			//"UnityEngine.Screen::get_height"
+			case 2:
+				Utils::height_address = 0x0;
+				break;
+				
+			//"UnityEngine.Screen::get_dpi"
+			case 3:
+				break;
+
+			//"UnityEngine.Screen::RequestOrientation"
+			case 4:
+				break;
+
+			//"UnityEngine.Screen::GetScreenOrientation"
+			case 5:
+				break;
+
+			//"UnityEngine.Screen::get_sleepTimeout"
+			case 6:
+				break;
+
+			//"UnityEngine.Screen::set_sleepTimeout"
+			case 7:
+				break;
+				
+			//"UnityEngine.Screen::IsOrientationEnabled"
+			case 8:
+				break;
+			
+			//"UnityEngine.Screen::SetOrientationEnabled"
+			case 9:
+				break;
+			
+			//"UnityEngine.Screen::get_currentResolution_Injected"
+			case 10:
+				break;
+			
+			//"UnityEngine.Screen::get_fullScreen"
+			case 11:
+				break;
+
+			//"UnityEngine.Screen::set_fullScreen"
+			case 12:
+				break;
+			
+			//"UnityEngine.Screen::get_fullScreenMode"
+			case 13:
+				break;
+			
+			//"UnityEngine.Screen::set_fullScreenMode"
+			case 14:
+				break;
+			
+			//"UnityEngine.Screen::get_safeArea_Injected"
+			case 15:
+				break;
+			
+			//"UnityEngine.Screen::SetResolution"
+			case 16:
+				Utils::width_address = 0x0;
+				Utils::height_address = 0x0;
+				break;
+			
+			//"UnityEngine.Screen::get_resolutions"
+			case 17:	
+				break;
+			
+			default:
+				break;
+		}
+	}
 }
 
 namespace Utils {
@@ -396,6 +476,9 @@ namespace Utils {
 	uintptr_t streamingMipmapsMaxFileIORequests_address = 0x0;
 	uintptr_t maxQueuedFrames_address = 0x0;
 	
+	uintptr_t width_address = 0x0;
+	uintptr_t height_address = 0x0;
+	
 	uint32_t pixelLightCount = 0;
 	uint32_t ShadowQuality = 0;
 	uint32_t ShadowProjection = 0;
@@ -427,6 +510,9 @@ namespace Utils {
 	bool streamingMipmapsAddAllCameras = false;
 	uint32_t streamingMipmapsMaxFileIORequests = 0;
 	uint32_t maxQueuedFrames = 0;
+	
+	uint32_t width = 0;
+	uint32_t height = 0;
 	
 	char BID_File[192];
 	char BID_File2[196];
@@ -470,10 +556,13 @@ namespace Utils {
 			fread(&streamingMipmapsMaxFileIORequests_address, 0x5, 1, offset);
 			fread(&maxQueuedFrames_address, 0x5, 1, offset);
 			
+			fread(&width_address, 0x5, 1, offset);
+			fread(&height_address, 0x5, 1, offset);
+			
 			FILE* __BID_File = fopen(BID_File, "rb");	
 			if (__BID_File != NULL) {
 				
-				///Read offsets for graphics settings, add main base address to pointers and inject them to game code
+				///Read offsets for Quality settings, add main base address to pointers and inject them to game code
 				for (uint8_t i = 1; i <= 31; i++) {
 					uint64_t ptr_function = 0;
 					uint64_t address_function = 0;
@@ -506,6 +595,27 @@ namespace Utils {
 						if (i > 9) error = error + 2;
 						if (i > 27) error++;
 						nullify::Quality(error);
+					}
+					fread(&address_function, 0x5, 1, offset);
+					if (error == 0) dmntchtWriteCheatProcessMemory(address_function, &ptr_function, 0x5);
+				}
+				
+				///Read offsets for Screen settings, add main base address to pointers and inject them to game code
+				for (uint8_t i = 1; i <= 3; i++) {
+					uint64_t ptr_function = 0;
+					uint64_t address_function = 0;
+					uint8_t error = 0;
+
+					//get
+					fread(&ptr_function, 0x4, 1, __BID_File);
+					if (ptr_function != 0) {
+						ptr_function = __builtin_bswap32((uint32_t)ptr_function);
+						ptr_function = ptr_function + dmnt_metadata.main_nso_extents.base;
+					}
+					else {
+						if (i == 3) error = 16;
+						else error = i;
+						nullify::Screen(error);
 					}
 					fread(&address_function, 0x5, 1, offset);
 					if (error == 0) dmntchtWriteCheatProcessMemory(address_function, &ptr_function, 0x5);

@@ -436,5 +436,24 @@ namespace dmntcht {
 		Utils::switchcase = 0;
 		Utils::settings = 0;
 	}
+	
+	void write_SetResolution() {
+		Utils::switchcase = 16;
+		Utils::settings = 2;
+		dmntchtWriteCheatProcessMemory(Utils::width_address, &Utils::width, 0x4);
+		dmntchtWriteCheatProcessMemory(Utils::height_address, &Utils::height, 0x4);
+		dmntchtWriteCheatProcessMemory(Utils::settings_address, &Utils::settings, 0x1);
+		dmntchtWriteCheatProcessMemory(Utils::switchcase_address, &Utils::switchcase, 0x1);
+		svcSleepThread(500'000'000);
+		Utils::switchcase = 1;
+		dmntchtWriteCheatProcessMemory(Utils::settings_address, &Utils::settings, 0x1);
+		dmntchtWriteCheatProcessMemory(Utils::switchcase_address, &Utils::switchcase, 0x1);
+		svcSleepThread((1000*1000*1000)/30);
+		Utils::switchcase = 2;
+		dmntchtWriteCheatProcessMemory(Utils::settings_address, &Utils::settings, 0x1);
+		dmntchtWriteCheatProcessMemory(Utils::switchcase_address, &Utils::switchcase, 0x1);
+		Utils::switchcase = 0;
+		Utils::settings = 0;
+	}
 
 }

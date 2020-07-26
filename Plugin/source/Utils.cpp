@@ -82,6 +82,12 @@ namespace Utils {
 		ptr = (uint64_t)&UnitySettings::Quality::maxQueuedFrames;
 		SaltySDCore_fwrite(&ptr, 0x5, 1, offset);
 
+		ptr = (uint64_t)&UnitySettings::Screen::width;
+		SaltySDCore_fwrite(&ptr, 0x5, 1, offset);
+		ptr = (uint64_t)&UnitySettings::Screen::height;
+		SaltySDCore_fwrite(&ptr, 0x5, 1, offset);
+		
+
 		ptr = (uint64_t)&UnitySettings::Quality::ptr_get_pixelLightCount;
 		SaltySDCore_fwrite(&ptr, 0x5, 1, offset);
 		ptr = (uint64_t)&UnitySettings::Quality::ptr_set_pixelLightCount;
@@ -235,6 +241,13 @@ namespace Utils {
 		ptr = (uint64_t)&UnitySettings::Quality::ptr_get_maxQueuedFrames;
 		SaltySDCore_fwrite(&ptr, 0x5, 1, offset);
 		ptr = (uint64_t)&UnitySettings::Quality::ptr_set_maxQueuedFrames;
+		SaltySDCore_fwrite(&ptr, 0x5, 1, offset);
+		
+		ptr = (uint64_t)&UnitySettings::Screen::ptr_get_width;
+		SaltySDCore_fwrite(&ptr, 0x5, 1, offset);
+		ptr = (uint64_t)&UnitySettings::Screen::ptr_get_height;
+		SaltySDCore_fwrite(&ptr, 0x5, 1, offset);
+		ptr = (uint64_t)&UnitySettings::Screen::ptr_SetResolution;
 		SaltySDCore_fwrite(&ptr, 0x5, 1, offset);
 		
 		SaltySDCore_fclose(offset);

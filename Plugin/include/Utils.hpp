@@ -1,5 +1,6 @@
 #include <switch_min.h>
 #include "QualitySettings.hpp"
+#include "ScreenSettings.hpp"
 #include "saltysd/SaltySD_core.h"
 #include "saltysd/SaltySD_ipc.h"
 #include "saltysd/SaltySD_dynamic.h"
@@ -11,7 +12,7 @@ namespace Utils {
 	enum Settings {
 		None = 0,
 		Quality = 1,
-		Render = 2
+		Screen = 2
 	};
 	
 	extern Settings _settings;
