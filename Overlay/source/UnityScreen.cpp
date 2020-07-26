@@ -7,7 +7,7 @@
 /////////////////////////////////////////////////////////////////////////////////
 
 tsl::elm::Element *SetResolution::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.0");
+	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
 		
 	auto list2 = new tsl::elm::List();
 		
@@ -129,7 +129,7 @@ ScreenSettings::ScreenSettings() {
 
 tsl::elm::Element *ScreenSettings::createUI() {
 	
-	auto *frame = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.0");
+	auto *frame = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
 	
 	auto list = new tsl::elm::List();
 	

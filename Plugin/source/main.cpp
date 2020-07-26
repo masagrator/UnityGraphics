@@ -27,7 +27,7 @@ u32 __nx_applet_type = AppletType_None;
 Handle orig_main_thread;
 void* orig_ctx;
 void* orig_saved_lr;
-const char* ver = "0.1";
+const char* ver = "0.1.1";
 
 const char* CheckTitleID() {
     char* titleid = (char*)malloc(0x20);

@@ -7,7 +7,7 @@
 /////////////////////////////////////////////////////////////////////////////////
 
 tsl::elm::Element *set_pixelLightCount::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.0");
+	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
 		
 	auto list2 = new tsl::elm::List();
 		
@@ -72,7 +72,7 @@ void set_pixelLightCount::update() {
 }
 
 tsl::elm::Element *set_shadows::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.0");
+	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -140,7 +140,7 @@ void set_shadows::update() {
 }
 
 tsl::elm::Element *set_shadowProjection::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.0");
+	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -194,7 +194,7 @@ void set_shadowProjection::update() {
 }
 
 tsl::elm::Element *set_shadowCascades::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.0");
+	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -259,7 +259,7 @@ void set_shadowCascades::update() {
 }
 
 tsl::elm::Element *set_shadowDistance::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.0");
+	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -347,7 +347,7 @@ void set_shadowDistance::update() {
 }
 
 tsl::elm::Element *set_shadowResolution::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.0");
+	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -429,7 +429,7 @@ void set_shadowResolution::update() {
 }
 
 tsl::elm::Element *set_shadowmaskMode::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.0");
+	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -483,7 +483,7 @@ void set_shadowmaskMode::update() {
 }
 
 tsl::elm::Element *set_shadowNearPlaneOffset::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.0");
+	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -571,7 +571,7 @@ void set_shadowNearPlaneOffset::update() {
 }
 
 tsl::elm::Element* set_shadowCascade2Split::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.0");
+	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -659,7 +659,7 @@ void set_shadowCascade2Split::update() {
 }
 
 tsl::elm::Element *set_lodBias::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.0");
+	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -747,7 +747,7 @@ void set_lodBias::update() {
 }
 
 tsl::elm::Element *set_anisotropicFiltering::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.0");
+	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -815,7 +815,7 @@ void set_anisotropicFiltering::update() {
 }
 
 tsl::elm::Element *set_masterTextureLimit::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.0");
+	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -880,7 +880,7 @@ void set_masterTextureLimit::update() {
 }
 
 tsl::elm::Element *set_maximumLODLevel::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.0");
+	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -945,7 +945,7 @@ void set_maximumLODLevel::update() {
 }
 
 tsl::elm::Element *set_particleRaycastBudget::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.0");
+	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -1010,7 +1010,7 @@ void set_particleRaycastBudget::update() {
 }
 
 tsl::elm::Element *set_softParticles::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.0");
+	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -1050,7 +1050,7 @@ void set_softParticles::update() {
 }
 
 tsl::elm::Element *set_softVegetation::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.0");
+	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -1090,7 +1090,7 @@ void set_softVegetation::update() {
 }
 
 tsl::elm::Element *set_vSyncCount::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.0");
+	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -1128,7 +1128,7 @@ void set_vSyncCount::update() {
 }
 
 tsl::elm::Element *set_antiAliasing::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.0");
+	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -1207,7 +1207,7 @@ void set_antiAliasing::update() {
 }
 
 tsl::elm::Element *set_asyncUploadTimeSlice::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.0");
+	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -1272,7 +1272,7 @@ void set_asyncUploadTimeSlice::update() {
 }
 
 tsl::elm::Element *set_asyncUploadBufferSize::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.0");
+	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -1343,7 +1343,7 @@ void set_asyncUploadBufferSize::update() {
 }
 
 tsl::elm::Element *set_asyncUploadPersistentBuffer::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.0");
+	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -1383,7 +1383,7 @@ void set_asyncUploadPersistentBuffer::update() {
 }
 
 tsl::elm::Element *set_realtimeReflectionProbes::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.0");
+	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -1423,7 +1423,7 @@ void set_realtimeReflectionProbes::update() {
 }
 
 tsl::elm::Element *set_billboardsFaceCameraPosition::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.0");
+	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -1463,7 +1463,7 @@ void set_billboardsFaceCameraPosition::update() {
 }
 
 tsl::elm::Element *set_resolutionScalingFixedDPIFactor::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.0");
+	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -1551,7 +1551,7 @@ void set_resolutionScalingFixedDPIFactor::update() {
 }
 
 tsl::elm::Element *set_blendWeights::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.0");
+	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -1619,7 +1619,7 @@ void set_blendWeights::update() {
 }
 
 tsl::elm::Element *set_streamingMipmapsActive::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.0");
+	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -1659,7 +1659,7 @@ void set_streamingMipmapsActive::update() {
 }
 
 tsl::elm::Element *set_streamingMipmapsMemoryBudget::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.0");
+	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -1726,7 +1726,7 @@ void set_streamingMipmapsMemoryBudget::update() {
 }
 
 tsl::elm::Element *set_streamingMipmapsMaxLevelReduction::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.0");
+	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -1791,7 +1791,7 @@ void set_streamingMipmapsMaxLevelReduction::update() {
 }
 
 tsl::elm::Element *set_streamingMipmapsAddAllCameras::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.0");
+	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -1831,7 +1831,7 @@ void set_streamingMipmapsAddAllCameras::update() {
 }
 
 tsl::elm::Element *set_streamingMipmapsMaxFileIORequests::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.0");
+	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -1899,7 +1899,7 @@ void set_streamingMipmapsMaxFileIORequests::update() {
 
 
 tsl::elm::Element *set_maxQueuedFrames::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.0");
+	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -1989,7 +1989,7 @@ QualitySettings::QualitySettings() {
 
 tsl::elm::Element *QualitySettings::createUI() {
 	
-	auto *frame = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.0");
+	auto *frame = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
 	
 	auto list = new tsl::elm::List();
 	

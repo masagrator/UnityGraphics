@@ -38,7 +38,7 @@ include $(DEVKITPRO)/libnx/switch_rules
 #   NACP building is skipped as well.
 #---------------------------------------------------------------------------------
 APP_TITLE	:=	UnityGraphics
-APP_VERSION	:=	1.0.0
+APP_VERSION	:=	0.1.1
 
 TARGET		:=	UnityGraphics-ovl
 BUILD		:=	build
