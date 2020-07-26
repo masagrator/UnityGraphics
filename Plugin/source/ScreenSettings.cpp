@@ -23,13 +23,8 @@ namespace UnitySettings { namespace Screen {
 	uintptr_t ptr_get_currentResolution_Injected = 0;
 	uintptr_t ptr_get_fullScreen = 0;
 	uintptr_t ptr_set_fullScreen = 0;
-
-	typedef uint32_t (*get_fullScreenMode)();
 	uintptr_t ptr_get_fullScreenMode = 0;
-	typedef void (*set_fullScreenMode)(uint32_t v_fullScreenMode);
 	uintptr_t ptr_set_fullScreenMode = 0;
-	uint32_t fullScreenMode = 0;
-	
 	uintptr_t ptr_get_safeArea_Injected = 0;
 
 	typedef void (*SetResolution)(uint32_t v_width, uint32_t v_height, uint32_t v_fullScreenMode, uint32_t v_preferredRefreshRate);
@@ -104,8 +99,7 @@ namespace UnitySettings { namespace Screen {
 			
 			//"UnityEngine.Screen::SetResolution"
 			case 16:
-				if (ptr_get_fullScreenMode != 0) fullScreenMode = ((get_fullScreenMode)(ptr_get_fullScreenMode))();
-				if (ptr_SetResolution != 0) ((SetResolution)(ptr_SetResolution))(width, height, fullScreenMode, 0);
+				if (ptr_SetResolution != 0) ((SetResolution)(ptr_SetResolution))(width, height, 0, 0);
 				break;
 			
 			//"UnityEngine.Screen::get_resolutions"
