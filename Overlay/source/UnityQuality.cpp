@@ -1973,7 +1973,6 @@ QualitySettings::QualitySettings() {
 		if (Utils::Quality_read == false) {
 			for (uint8_t i = 1; i <= 64; i = i + 2) {
 			if (i == 57) i++;
-			if (i == 64) i = 66;
 			Utils::switchcase = i;
 			dmntchtWriteCheatProcessMemory(Utils::settings_address, &Utils::settings, 0x1);
 			dmntchtWriteCheatProcessMemory(Utils::switchcase_address, &Utils::switchcase, 0x1);
