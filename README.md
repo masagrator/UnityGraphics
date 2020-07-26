@@ -12,8 +12,11 @@ Requirements:
 
 For now UnityGraphics supports only:
 - Quality category excluding:
+
 -- `shadowCascade4Split_Injected` (requires using Vector3 struct)
+
 -- `QualityLevel` (they are just profiles and cannot be used to bring default settings, so I don't bother with implementing it). I'm not implementing functions that doesn't have "set" counterpart.
+
 - SetResolution from Screen category
 
 
