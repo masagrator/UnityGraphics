@@ -103,7 +103,7 @@ void SetResolution::update() {
 	sprintf(Utils::OptionsChar, "Resolution: %u" "x%u", Utils::width, Utils::height);
 }
 
-///* Quality Settings Menu
+///* Screen Settings Menu
 ///
 ///
 //
