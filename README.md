@@ -21,6 +21,8 @@ For now UnityGraphics supports only:
 
 - SetResolution from Screen category
 
+- Games made with Unity 2017.1 and newer
+
 I'm not implementing functions that doesn't have "set" counterpart.
 
 
@@ -34,6 +36,7 @@ Planned:
 - Add save/load configurations
 - Add more settings and categories
 - Support more games
+- Add support for oldet Unity engines
 
 ---
 
