@@ -135,7 +135,7 @@ tsl::elm::Element *ScalableBufferManagerSettings::createUI() {
 	if (Utils::MAGIC == 0x16BA7E38 && Utils::notsupported == false) {
 		list->addItem(new tsl::elm::CategoryHeader("ScalableBufferManager Settings"));
 		
-		if (Utils::width_address != 0 && Utils::height_address != 0) {
+		if (Utils::widthScaleFactor_address != 0 && Utils::heightScaleFactor_address != 0) {
 			auto *ResizeBuffersauto = new tsl::elm::ListItem("ResizeBuffers", "enum");
 			ResizeBuffersauto->setClickListener([](u64 keys) { 
 				if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
