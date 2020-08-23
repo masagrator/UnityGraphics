@@ -7,7 +7,7 @@
 /////////////////////////////////////////////////////////////////////////////////
 
 tsl::elm::Element *set_pixelLightCount::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
+	auto *Frame2 = new tsl::elm::OverlayFrame(Utils::overlayName, Utils::version);
 		
 	auto list2 = new tsl::elm::List();
 		
@@ -72,7 +72,7 @@ void set_pixelLightCount::update() {
 }
 
 tsl::elm::Element *set_shadows::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
+	auto *Frame2 = new tsl::elm::OverlayFrame(Utils::overlayName, Utils::version);
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -84,9 +84,9 @@ tsl::elm::Element *set_shadows::createUI() {
 	auto *clickableListItem = new tsl::elm::ListItem("Disable");
 	clickableListItem->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		Utils::ShadowQuality = 0;
-		dmntcht::write_shadows();
-		return true;
+			Utils::ShadowQuality = 0;
+			dmntcht::write_shadows();
+			return true;
 		}
 
 		return false;
@@ -97,9 +97,9 @@ tsl::elm::Element *set_shadows::createUI() {
 	auto *clickableListItem2 = new tsl::elm::ListItem("Hard only");
 	clickableListItem2->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		Utils::ShadowQuality = 1;
-		dmntcht::write_shadows();
-		return true;
+			Utils::ShadowQuality = 1;
+			dmntcht::write_shadows();
+			return true;
 		}
 
 		return false;
@@ -110,9 +110,9 @@ tsl::elm::Element *set_shadows::createUI() {
 	auto *clickableListItem3 = new tsl::elm::ListItem("All");
 	clickableListItem3->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		Utils::ShadowQuality = 2;
-		dmntcht::write_shadows();
-		return true;
+			Utils::ShadowQuality = 2;
+			dmntcht::write_shadows();
+			return true;
 		}
 
 		return false;
@@ -140,7 +140,7 @@ void set_shadows::update() {
 }
 
 tsl::elm::Element *set_shadowProjection::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
+	auto *Frame2 = new tsl::elm::OverlayFrame(Utils::overlayName, Utils::version);
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -152,9 +152,9 @@ tsl::elm::Element *set_shadowProjection::createUI() {
 	auto *clickableListItem = new tsl::elm::ListItem("CloseFit");
 	clickableListItem->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		Utils::ShadowProjection = 0;
-		dmntcht::write_shadowProjection();
-		return true;
+			Utils::ShadowProjection = 0;
+			dmntcht::write_shadowProjection();
+			return true;
 		}
 
 		return false;
@@ -165,9 +165,9 @@ tsl::elm::Element *set_shadowProjection::createUI() {
 	auto *clickableListItem2 = new tsl::elm::ListItem("StableFit");
 	clickableListItem2->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		Utils::ShadowProjection = 1;
-		dmntcht::write_shadowProjection();
-		return true;
+			Utils::ShadowProjection = 1;
+			dmntcht::write_shadowProjection();
+			return true;
 		}
 
 		return false;
@@ -194,7 +194,7 @@ void set_shadowProjection::update() {
 }
 
 tsl::elm::Element *set_shadowCascades::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
+	auto *Frame2 = new tsl::elm::OverlayFrame(Utils::overlayName, Utils::version);
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -206,9 +206,9 @@ tsl::elm::Element *set_shadowCascades::createUI() {
 	auto *clickableListItem = new tsl::elm::ListItem("Set 0");
 	clickableListItem->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		Utils::shadowCascades = 0;
-		dmntcht::write_shadowCascades();
-		return true;
+			Utils::shadowCascades = 0;
+			dmntcht::write_shadowCascades();
+			return true;
 		}
 
 		return false;
@@ -219,9 +219,9 @@ tsl::elm::Element *set_shadowCascades::createUI() {
 	auto *clickableListItem2 = new tsl::elm::ListItem("Increase");
 	clickableListItem2->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		Utils::shadowCascades++;
-		dmntcht::write_shadowCascades();
-		return true;
+			Utils::shadowCascades++;
+			dmntcht::write_shadowCascades();
+			return true;
 		}
 
 		return false;
@@ -232,9 +232,9 @@ tsl::elm::Element *set_shadowCascades::createUI() {
 	auto *clickableListItem3 = new tsl::elm::ListItem("Decrease");
 	clickableListItem3->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		if (Utils::shadowCascades != 0) Utils::shadowCascades--;
-		dmntcht::write_shadowCascades();
-		return true;
+			if (Utils::shadowCascades != 0) Utils::shadowCascades--;
+			dmntcht::write_shadowCascades();
+			return true;
 		}
 
 		return false;
@@ -259,7 +259,7 @@ void set_shadowCascades::update() {
 }
 
 tsl::elm::Element *set_shadowDistance::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
+	auto *Frame2 = new tsl::elm::OverlayFrame(Utils::overlayName, Utils::version);
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -271,9 +271,9 @@ tsl::elm::Element *set_shadowDistance::createUI() {
 	auto *clickableListItem = new tsl::elm::ListItem("Set 1");
 	clickableListItem->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		Utils::shadowDistance = 1;
-		dmntcht::write_shadowDistance();
-		return true;
+			Utils::shadowDistance = 1;
+			dmntcht::write_shadowDistance();
+			return true;
 		}
 
 		return false;
@@ -284,18 +284,16 @@ tsl::elm::Element *set_shadowDistance::createUI() {
 	auto *clickableListItem2 = new tsl::elm::ListItem("Increase");
 	clickableListItem2->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		if (Utils::shadowDistance >= 0.5) {
-			Utils::shadowDistance = Utils::shadowDistance + 0.125;
-		}
-		else {
-			Utils::denominator = (float)1 / Utils::shadowDistance;
-			Utils::denominator = round(Utils::denominator);
-			Utils::denominator = Utils::denominator - 1;
-			Utils::shadowDistance = (float)1 / Utils::denominator;
-			if (Utils::shadowDistance > 0.5) Utils::shadowDistance = 0.5;
-		}
-		dmntcht::write_shadowDistance();
-		return true;
+			if (Utils::shadowDistance >= 0.5) Utils::shadowDistance = Utils::shadowDistance + 0.125;
+			else {
+				Utils::denominator = (float)1 / Utils::shadowDistance;
+				Utils::denominator = round(Utils::denominator);
+				Utils::denominator = Utils::denominator - 1;
+				Utils::shadowDistance = (float)1 / Utils::denominator;
+				if (Utils::shadowDistance > 0.5) Utils::shadowDistance = 0.5;
+			}
+			dmntcht::write_shadowDistance();
+			return true;
 		}
 
 		return false;
@@ -306,23 +304,23 @@ tsl::elm::Element *set_shadowDistance::createUI() {
 	auto *clickableListItem3 = new tsl::elm::ListItem("Decrease");
 	clickableListItem3->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		if (Utils::shadowDistance < 0.5) {
-			Utils::denominator = (float)1 / Utils::shadowDistance;
-			Utils::denominator = round(Utils::denominator);
-			Utils::denominator = Utils::denominator + 1;
-			if (Utils::shadowDistance != 0) Utils::shadowDistance = 1 / Utils::denominator;
-		}
-		else if (Utils::shadowDistance == 0.5) {
-			Utils::denominator = 3;
-			Utils::shadowDistance = (float)1 / Utils::denominator;
-		}
-		else {
-			Utils::shadowDistance = Utils::shadowDistance - 0.125;
-			if (Utils::shadowDistance < 0.5) Utils::shadowDistance = 0.5;
-		}
-		
-		dmntcht::write_shadowDistance();
-		return true;
+			if (Utils::shadowDistance < 0.5) {
+				Utils::denominator = (float)1 / Utils::shadowDistance;
+				Utils::denominator = round(Utils::denominator);
+				Utils::denominator = Utils::denominator + 1;
+				if (Utils::shadowDistance != 0) Utils::shadowDistance = 1 / Utils::denominator;
+			}
+			else if (Utils::shadowDistance == 0.5) {
+				Utils::denominator = 3;
+				Utils::shadowDistance = (float)1 / Utils::denominator;
+			}
+			else {
+				Utils::shadowDistance = Utils::shadowDistance - 0.125;
+				if (Utils::shadowDistance < 0.5) Utils::shadowDistance = 0.5;
+			}
+			
+			dmntcht::write_shadowDistance();
+			return true;
 		}
 
 		return false;
@@ -347,7 +345,7 @@ void set_shadowDistance::update() {
 }
 
 tsl::elm::Element *set_shadowResolution::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
+	auto *Frame2 = new tsl::elm::OverlayFrame(Utils::overlayName, Utils::version);
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -359,9 +357,9 @@ tsl::elm::Element *set_shadowResolution::createUI() {
 	auto *clickableListItem = new tsl::elm::ListItem("Low");
 	clickableListItem->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		Utils::ShadowResolution = 0;
-		dmntcht::write_shadowResolution();
-		return true;
+			Utils::ShadowResolution = 0;
+			dmntcht::write_shadowResolution();
+			return true;
 		}
 
 		return false;
@@ -372,9 +370,9 @@ tsl::elm::Element *set_shadowResolution::createUI() {
 	auto *clickableListItem2 = new tsl::elm::ListItem("Medium");
 	clickableListItem2->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		Utils::ShadowResolution = 1;
-		dmntcht::write_shadowResolution();
-		return true;
+			Utils::ShadowResolution = 1;
+			dmntcht::write_shadowResolution();
+			return true;
 		}
 
 		return false;
@@ -385,9 +383,9 @@ tsl::elm::Element *set_shadowResolution::createUI() {
 	auto *clickableListItem3 = new tsl::elm::ListItem("High");
 	clickableListItem3->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		Utils::ShadowResolution = 2;
-		dmntcht::write_shadowResolution();
-		return true;
+			Utils::ShadowResolution = 2;
+			dmntcht::write_shadowResolution();
+			return true;
 		}
 
 		return false;
@@ -398,9 +396,9 @@ tsl::elm::Element *set_shadowResolution::createUI() {
 	auto *clickableListItem4 = new tsl::elm::ListItem("Very High");
 	clickableListItem4->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		Utils::ShadowResolution = 3;
-		dmntcht::write_shadowResolution();
-		return true;
+			Utils::ShadowResolution = 3;
+			dmntcht::write_shadowResolution();
+			return true;
 		}
 
 		return false;
@@ -429,7 +427,7 @@ void set_shadowResolution::update() {
 }
 
 tsl::elm::Element *set_shadowmaskMode::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
+	auto *Frame2 = new tsl::elm::OverlayFrame(Utils::overlayName, Utils::version);
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -441,9 +439,9 @@ tsl::elm::Element *set_shadowmaskMode::createUI() {
 	auto *clickableListItem = new tsl::elm::ListItem("Shadowmask");
 	clickableListItem->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		Utils::ShadowmaskMode = 0;
-		dmntcht::write_shadowmaskMode();
-		return true;
+			Utils::ShadowmaskMode = 0;
+			dmntcht::write_shadowmaskMode();
+			return true;
 		}
 
 		return false;
@@ -454,9 +452,9 @@ tsl::elm::Element *set_shadowmaskMode::createUI() {
 	auto *clickableListItem2 = new tsl::elm::ListItem("Distance Shadowmask");
 	clickableListItem2->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		Utils::ShadowmaskMode = 1;
-		dmntcht::write_shadowmaskMode();
-		return true;
+			Utils::ShadowmaskMode = 1;
+			dmntcht::write_shadowmaskMode();
+			return true;
 		}
 
 		return false;
@@ -483,7 +481,7 @@ void set_shadowmaskMode::update() {
 }
 
 tsl::elm::Element *set_shadowNearPlaneOffset::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
+	auto *Frame2 = new tsl::elm::OverlayFrame(Utils::overlayName, Utils::version);
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -495,9 +493,9 @@ tsl::elm::Element *set_shadowNearPlaneOffset::createUI() {
 	auto *clickableListItem = new tsl::elm::ListItem("Set 1");
 	clickableListItem->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		Utils::shadowNearPlaneOffset = 1;
-		dmntcht::write_shadowNearPlaneOffset();
-		return true;
+			Utils::shadowNearPlaneOffset = 1;
+			dmntcht::write_shadowNearPlaneOffset();
+			return true;
 		}
 
 		return false;
@@ -508,18 +506,16 @@ tsl::elm::Element *set_shadowNearPlaneOffset::createUI() {
 	auto *clickableListItem2 = new tsl::elm::ListItem("Increase");
 	clickableListItem2->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		if (Utils::shadowNearPlaneOffset >= 0.5) {
-			Utils::shadowNearPlaneOffset = Utils::shadowNearPlaneOffset + 0.125;
-		}
-		else {
-			Utils::denominator = (float)1 / Utils::shadowNearPlaneOffset;
-			Utils::denominator = round(Utils::denominator);
-			Utils::denominator = Utils::denominator - 1;
-			Utils::shadowNearPlaneOffset = (float)1 / Utils::denominator;
-			if (Utils::shadowNearPlaneOffset > 0.5) Utils::shadowNearPlaneOffset = 0.5;
-		}
-		dmntcht::write_shadowNearPlaneOffset();
-		return true;
+			if (Utils::shadowNearPlaneOffset >= 0.5) Utils::shadowNearPlaneOffset = Utils::shadowNearPlaneOffset + 0.125;
+			else {
+				Utils::denominator = (float)1 / Utils::shadowNearPlaneOffset;
+				Utils::denominator = round(Utils::denominator);
+				Utils::denominator = Utils::denominator - 1;
+				Utils::shadowNearPlaneOffset = (float)1 / Utils::denominator;
+				if (Utils::shadowNearPlaneOffset > 0.5) Utils::shadowNearPlaneOffset = 0.5;
+			}
+			dmntcht::write_shadowNearPlaneOffset();
+			return true;
 		}
 
 		return false;
@@ -530,23 +526,23 @@ tsl::elm::Element *set_shadowNearPlaneOffset::createUI() {
 	auto *clickableListItem3 = new tsl::elm::ListItem("Decrease");
 	clickableListItem3->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		if (Utils::shadowNearPlaneOffset < 0.5) {
-			Utils::denominator = (float)1 / Utils::shadowNearPlaneOffset;
-			Utils::denominator = round(Utils::denominator);
-			Utils::denominator = Utils::denominator + 1;
-			if (Utils::shadowNearPlaneOffset != 0) Utils::shadowNearPlaneOffset = (float)1 / Utils::denominator;
-		}
-		else if (Utils::shadowNearPlaneOffset == 0.5) {
-			Utils::denominator = 3;
-			Utils::shadowNearPlaneOffset = (float)1 / Utils::denominator;
-		}
-		else {
-			Utils::shadowNearPlaneOffset = Utils::shadowNearPlaneOffset - 0.125;
-			if (Utils::shadowNearPlaneOffset < 0.5) Utils::shadowNearPlaneOffset = 0.5;
-		}
-		
-		dmntcht::write_shadowNearPlaneOffset();
-		return true;
+			if (Utils::shadowNearPlaneOffset < 0.5) {
+				Utils::denominator = (float)1 / Utils::shadowNearPlaneOffset;
+				Utils::denominator = round(Utils::denominator);
+				Utils::denominator = Utils::denominator + 1;
+				if (Utils::shadowNearPlaneOffset != 0) Utils::shadowNearPlaneOffset = (float)1 / Utils::denominator;
+			}
+			else if (Utils::shadowNearPlaneOffset == 0.5) {
+				Utils::denominator = 3;
+				Utils::shadowNearPlaneOffset = (float)1 / Utils::denominator;
+			}
+			else {
+				Utils::shadowNearPlaneOffset = Utils::shadowNearPlaneOffset - 0.125;
+				if (Utils::shadowNearPlaneOffset < 0.5) Utils::shadowNearPlaneOffset = 0.5;
+			}
+			
+			dmntcht::write_shadowNearPlaneOffset();
+			return true;
 		}
 
 		return false;
@@ -571,7 +567,7 @@ void set_shadowNearPlaneOffset::update() {
 }
 
 tsl::elm::Element* set_shadowCascade2Split::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
+	auto *Frame2 = new tsl::elm::OverlayFrame(Utils::overlayName, Utils::version);
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -583,9 +579,9 @@ tsl::elm::Element* set_shadowCascade2Split::createUI() {
 	auto *clickableListItem = new tsl::elm::ListItem("Set 1");
 	clickableListItem->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		Utils::shadowCascade2Split = 1;
-		dmntcht::write_shadowCascade2Split();
-		return true;
+			Utils::shadowCascade2Split = 1;
+			dmntcht::write_shadowCascade2Split();
+			return true;
 		}
 
 		return false;
@@ -596,18 +592,16 @@ tsl::elm::Element* set_shadowCascade2Split::createUI() {
 	auto *clickableListItem2 = new tsl::elm::ListItem("Increase");
 	clickableListItem2->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		if (Utils::shadowCascade2Split >= 0.5) {
-			Utils::shadowCascade2Split = Utils::shadowCascade2Split + 0.125;
-		}
-		else {
-			Utils::denominator = (float)1 / Utils::shadowCascade2Split;
-			Utils::denominator = round(Utils::denominator);
-			Utils::denominator = Utils::denominator - 1;
-			Utils::shadowCascade2Split = (float)1 / Utils::denominator;
-			if (Utils::shadowCascade2Split > 0.5) Utils::shadowCascade2Split = 0.5;
-		}
-		dmntcht::write_shadowCascade2Split();
-		return true;
+			if (Utils::shadowCascade2Split >= 0.5) Utils::shadowCascade2Split = Utils::shadowCascade2Split + 0.125;
+			else {
+				Utils::denominator = (float)1 / Utils::shadowCascade2Split;
+				Utils::denominator = round(Utils::denominator);
+				Utils::denominator = Utils::denominator - 1;
+				Utils::shadowCascade2Split = (float)1 / Utils::denominator;
+				if (Utils::shadowCascade2Split > 0.5) Utils::shadowCascade2Split = 0.5;
+			}
+			dmntcht::write_shadowCascade2Split();
+			return true;
 		}
 
 		return false;
@@ -618,23 +612,23 @@ tsl::elm::Element* set_shadowCascade2Split::createUI() {
 	auto *clickableListItem3 = new tsl::elm::ListItem("Decrease");
 	clickableListItem3->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		if (Utils::shadowCascade2Split < 0.5) {
-			Utils::denominator = (float)1 / Utils::shadowCascade2Split;
-			Utils::denominator = round(Utils::denominator);
-			Utils::denominator = Utils::denominator + 1;
-			if (Utils::shadowCascade2Split != 0) Utils::shadowCascade2Split = (float)1 / Utils::denominator;
-		}
-		else if (Utils::shadowCascade2Split == 0.5) {
-			Utils::denominator = 3;
-			Utils::shadowCascade2Split = 1 / Utils::denominator;
-		}
-		else {
-			Utils::shadowCascade2Split = Utils::shadowCascade2Split - 0.125;
-			if (Utils::shadowCascade2Split < 0.5) Utils::shadowCascade2Split = 0.5;
-		}
-		
-		dmntcht::write_shadowCascade2Split();
-		return true;
+			if (Utils::shadowCascade2Split < 0.5) {
+				Utils::denominator = (float)1 / Utils::shadowCascade2Split;
+				Utils::denominator = round(Utils::denominator);
+				Utils::denominator = Utils::denominator + 1;
+				if (Utils::shadowCascade2Split != 0) Utils::shadowCascade2Split = (float)1 / Utils::denominator;
+			}
+			else if (Utils::shadowCascade2Split == 0.5) {
+				Utils::denominator = 3;
+				Utils::shadowCascade2Split = 1 / Utils::denominator;
+			}
+			else {
+				Utils::shadowCascade2Split = Utils::shadowCascade2Split - 0.125;
+				if (Utils::shadowCascade2Split < 0.5) Utils::shadowCascade2Split = 0.5;
+			}
+			
+			dmntcht::write_shadowCascade2Split();
+			return true;
 		}
 
 		return false;
@@ -659,7 +653,7 @@ void set_shadowCascade2Split::update() {
 }
 
 tsl::elm::Element *set_lodBias::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
+	auto *Frame2 = new tsl::elm::OverlayFrame(Utils::overlayName, Utils::version);
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -671,9 +665,9 @@ tsl::elm::Element *set_lodBias::createUI() {
 	auto *clickableListItem = new tsl::elm::ListItem("Set 1");
 	clickableListItem->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		Utils::lodBias = 1;
-		dmntcht::write_lodBias();
-		return true;
+			Utils::lodBias = 1;
+			dmntcht::write_lodBias();
+			return true;
 		}
 
 		return false;
@@ -684,18 +678,16 @@ tsl::elm::Element *set_lodBias::createUI() {
 	auto *clickableListItem2 = new tsl::elm::ListItem("Increase");
 	clickableListItem2->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		if (Utils::lodBias >= 0.5) {
-			Utils::lodBias = Utils::lodBias + 0.125;
-		}
-		else {
-			Utils::denominator = (float)1 / Utils::lodBias;
-			Utils::denominator = round(Utils::denominator);
-			Utils::denominator = Utils::denominator - 1;
-			Utils::lodBias = (float)1 / Utils::denominator;
-			if (Utils::lodBias > 0.5) Utils::lodBias = 0.5;
-		}
-		dmntcht::write_lodBias();
-		return true;
+			if (Utils::lodBias >= 0.5) Utils::lodBias = Utils::lodBias + 0.125;
+			else {
+				Utils::denominator = (float)1 / Utils::lodBias;
+				Utils::denominator = round(Utils::denominator);
+				Utils::denominator = Utils::denominator - 1;
+				Utils::lodBias = (float)1 / Utils::denominator;
+				if (Utils::lodBias > 0.5) Utils::lodBias = 0.5;
+			}
+			dmntcht::write_lodBias();
+			return true;
 		}
 
 		return false;
@@ -706,23 +698,23 @@ tsl::elm::Element *set_lodBias::createUI() {
 	auto *clickableListItem3 = new tsl::elm::ListItem("Decrease");
 	clickableListItem3->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		if (Utils::lodBias < 0.5) {
-			Utils::denominator = (float)1 / Utils::lodBias;
-			Utils::denominator = round(Utils::denominator);
-			Utils::denominator = Utils::denominator + 1;
-			if (Utils::lodBias != 0) Utils::lodBias = (float)1 / Utils::denominator;
-		}
-		else if (Utils::lodBias == 0.5) {
-			Utils::denominator = 3;
-			Utils::lodBias = 1 / Utils::denominator;
-		}
-		else {
-			Utils::lodBias = Utils::lodBias - 0.125;
-			if (Utils::lodBias < 0.5) Utils::lodBias = 0.5;
-		}
-		
-		dmntcht::write_lodBias();
-		return true;
+			if (Utils::lodBias < 0.5) {
+				Utils::denominator = (float)1 / Utils::lodBias;
+				Utils::denominator = round(Utils::denominator);
+				Utils::denominator = Utils::denominator + 1;
+				if (Utils::lodBias != 0) Utils::lodBias = (float)1 / Utils::denominator;
+			}
+			else if (Utils::lodBias == 0.5) {
+				Utils::denominator = 3;
+				Utils::lodBias = 1 / Utils::denominator;
+			}
+			else {
+				Utils::lodBias = Utils::lodBias - 0.125;
+				if (Utils::lodBias < 0.5) Utils::lodBias = 0.5;
+			}
+			
+			dmntcht::write_lodBias();
+			return true;
 		}
 
 		return false;
@@ -747,7 +739,7 @@ void set_lodBias::update() {
 }
 
 tsl::elm::Element *set_anisotropicFiltering::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
+	auto *Frame2 = new tsl::elm::OverlayFrame(Utils::overlayName, Utils::version);
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -759,9 +751,9 @@ tsl::elm::Element *set_anisotropicFiltering::createUI() {
 	auto *clickableListItem = new tsl::elm::ListItem("Disable");
 	clickableListItem->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		Utils::AnisotropicFiltering = 0;
-		dmntcht::write_anisotropicFiltering();
-		return true;
+			Utils::AnisotropicFiltering = 0;
+			dmntcht::write_anisotropicFiltering();
+			return true;
 		}
 
 		return false;
@@ -772,9 +764,9 @@ tsl::elm::Element *set_anisotropicFiltering::createUI() {
 	auto *clickableListItem2 = new tsl::elm::ListItem("Enable");
 	clickableListItem2->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		Utils::AnisotropicFiltering = 1;
-		dmntcht::write_anisotropicFiltering();
-		return true;
+			Utils::AnisotropicFiltering = 1;
+			dmntcht::write_anisotropicFiltering();
+			return true;
 		}
 
 		return false;
@@ -785,9 +777,9 @@ tsl::elm::Element *set_anisotropicFiltering::createUI() {
 	auto *clickableListItem3 = new tsl::elm::ListItem("Force Enable");
 	clickableListItem3->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		Utils::AnisotropicFiltering = 2;
-		dmntcht::write_anisotropicFiltering();
-		return true;
+			Utils::AnisotropicFiltering = 2;
+			dmntcht::write_anisotropicFiltering();
+			return true;
 		}
 
 		return false;
@@ -815,7 +807,7 @@ void set_anisotropicFiltering::update() {
 }
 
 tsl::elm::Element *set_masterTextureLimit::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
+	auto *Frame2 = new tsl::elm::OverlayFrame(Utils::overlayName, Utils::version);
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -827,9 +819,9 @@ tsl::elm::Element *set_masterTextureLimit::createUI() {
 	auto *clickableListItem = new tsl::elm::ListItem("Set 1");
 	clickableListItem->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		Utils::masterTextureLimit = 1;
-		dmntcht::write_masterTextureLimit();
-		return true;
+			Utils::masterTextureLimit = 1;
+			dmntcht::write_masterTextureLimit();
+			return true;
 		}
 
 		return false;
@@ -840,9 +832,9 @@ tsl::elm::Element *set_masterTextureLimit::createUI() {
 	auto *clickableListItem2 = new tsl::elm::ListItem("Increase");
 	clickableListItem2->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		Utils::masterTextureLimit++;
-		dmntcht::write_masterTextureLimit();
-		return true;
+			Utils::masterTextureLimit++;
+			dmntcht::write_masterTextureLimit();
+			return true;
 		}
 
 		return false;
@@ -853,9 +845,9 @@ tsl::elm::Element *set_masterTextureLimit::createUI() {
 	auto *clickableListItem3 = new tsl::elm::ListItem("Decrease");
 	clickableListItem3->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		if (Utils::masterTextureLimit != 0) Utils::masterTextureLimit--;
-		dmntcht::write_masterTextureLimit();
-		return true;
+			if (Utils::masterTextureLimit != 0) Utils::masterTextureLimit--;
+			dmntcht::write_masterTextureLimit();
+			return true;
 		}
 
 		return false;
@@ -880,7 +872,7 @@ void set_masterTextureLimit::update() {
 }
 
 tsl::elm::Element *set_maximumLODLevel::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
+	auto *Frame2 = new tsl::elm::OverlayFrame(Utils::overlayName, Utils::version);
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -892,9 +884,9 @@ tsl::elm::Element *set_maximumLODLevel::createUI() {
 	auto *clickableListItem = new tsl::elm::ListItem("Set 1");
 	clickableListItem->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		Utils::maximumLODLevel = 1;
-		dmntcht::write_maximumLODLevel();
-		return true;
+			Utils::maximumLODLevel = 1;
+			dmntcht::write_maximumLODLevel();
+			return true;
 		}
 
 		return false;
@@ -905,9 +897,9 @@ tsl::elm::Element *set_maximumLODLevel::createUI() {
 	auto *clickableListItem2 = new tsl::elm::ListItem("Increase");
 	clickableListItem2->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		Utils::maximumLODLevel++;
-		dmntcht::write_maximumLODLevel();
-		return true;
+			Utils::maximumLODLevel++;
+			dmntcht::write_maximumLODLevel();
+			return true;
 		}
 
 		return false;
@@ -918,9 +910,9 @@ tsl::elm::Element *set_maximumLODLevel::createUI() {
 	auto *clickableListItem3 = new tsl::elm::ListItem("Decrease");
 	clickableListItem3->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		if (Utils::maximumLODLevel != 0) Utils::maximumLODLevel--;
-		dmntcht::write_maximumLODLevel();
-		return true;
+			if (Utils::maximumLODLevel != 0) Utils::maximumLODLevel--;
+			dmntcht::write_maximumLODLevel();
+			return true;
 		}
 
 		return false;
@@ -945,7 +937,7 @@ void set_maximumLODLevel::update() {
 }
 
 tsl::elm::Element *set_particleRaycastBudget::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
+	auto *Frame2 = new tsl::elm::OverlayFrame(Utils::overlayName, Utils::version);
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -957,9 +949,9 @@ tsl::elm::Element *set_particleRaycastBudget::createUI() {
 	auto *clickableListItem = new tsl::elm::ListItem("Set 256");
 	clickableListItem->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		Utils::particleRaycastBudget = 256;
-		dmntcht::write_particleRaycastBudget();
-		return true;
+			Utils::particleRaycastBudget = 256;
+			dmntcht::write_particleRaycastBudget();
+			return true;
 		}
 
 		return false;
@@ -970,9 +962,9 @@ tsl::elm::Element *set_particleRaycastBudget::createUI() {
 	auto *clickableListItem2 = new tsl::elm::ListItem("Increase");
 	clickableListItem2->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		Utils::particleRaycastBudget = Utils::particleRaycastBudget * 2;
-		dmntcht::write_particleRaycastBudget();
-		return true;
+			Utils::particleRaycastBudget = Utils::particleRaycastBudget * 2;
+			dmntcht::write_particleRaycastBudget();
+			return true;
 		}
 
 		return false;
@@ -983,9 +975,9 @@ tsl::elm::Element *set_particleRaycastBudget::createUI() {
 	auto *clickableListItem3 = new tsl::elm::ListItem("Decrease");
 	clickableListItem3->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		if (Utils::particleRaycastBudget != 1) Utils::particleRaycastBudget = Utils::particleRaycastBudget / 2;
-		dmntcht::write_particleRaycastBudget();
-		return true;
+			if (Utils::particleRaycastBudget != 1) Utils::particleRaycastBudget = Utils::particleRaycastBudget / 2;
+			dmntcht::write_particleRaycastBudget();
+			return true;
 		}
 
 		return false;
@@ -1010,7 +1002,7 @@ void set_particleRaycastBudget::update() {
 }
 
 tsl::elm::Element *set_softParticles::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
+	auto *Frame2 = new tsl::elm::OverlayFrame(Utils::overlayName, Utils::version);
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -1022,9 +1014,9 @@ tsl::elm::Element *set_softParticles::createUI() {
 	auto *clickableListItem = new tsl::elm::ListItem("Change");
 	clickableListItem->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		Utils::softParticles = !Utils::softParticles;
-		dmntcht::write_softParticles();
-		return true;
+			Utils::softParticles = !Utils::softParticles;
+			dmntcht::write_softParticles();
+			return true;
 		}
 
 		return false;
@@ -1050,7 +1042,7 @@ void set_softParticles::update() {
 }
 
 tsl::elm::Element *set_softVegetation::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
+	auto *Frame2 = new tsl::elm::OverlayFrame(Utils::overlayName, Utils::version);
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -1062,9 +1054,9 @@ tsl::elm::Element *set_softVegetation::createUI() {
 	auto *clickableListItem = new tsl::elm::ListItem("Change");
 	clickableListItem->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		Utils::softVegetation = !Utils::softVegetation;
-		dmntcht::write_softVegetation();
-		return true;
+			Utils::softVegetation = !Utils::softVegetation;
+			dmntcht::write_softVegetation();
+			return true;
 		}
 
 		return false;
@@ -1090,7 +1082,7 @@ void set_softVegetation::update() {
 }
 
 tsl::elm::Element *set_vSyncCount::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
+	auto *Frame2 = new tsl::elm::OverlayFrame(Utils::overlayName, Utils::version);
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -1102,8 +1094,8 @@ tsl::elm::Element *set_vSyncCount::createUI() {
 	auto *clickableListItem = new tsl::elm::ListItem("Change");
 	clickableListItem->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		dmntcht::write_vSyncCount();
-		return true;
+			dmntcht::write_vSyncCount();
+			return true;
 		}
 
 		return false;
@@ -1128,7 +1120,7 @@ void set_vSyncCount::update() {
 }
 
 tsl::elm::Element *set_antiAliasing::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
+	auto *Frame2 = new tsl::elm::OverlayFrame(Utils::overlayName, Utils::version);
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -1140,9 +1132,9 @@ tsl::elm::Element *set_antiAliasing::createUI() {
 	auto *clickableListItem = new tsl::elm::ListItem("Disable");
 	clickableListItem->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		Utils::antiAliasing = 1;
-		dmntcht::write_antiAliasing();
-		return true;
+			Utils::antiAliasing = 1;
+			dmntcht::write_antiAliasing();
+			return true;
 		}
 
 		return false;
@@ -1153,9 +1145,9 @@ tsl::elm::Element *set_antiAliasing::createUI() {
 	auto *clickableListItem2 = new tsl::elm::ListItem("Set 2x");
 	clickableListItem2->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		Utils::antiAliasing = 0;
-		dmntcht::write_antiAliasing();
-		return true;
+			Utils::antiAliasing = 0;
+			dmntcht::write_antiAliasing();
+			return true;
 		}
 
 		return false;
@@ -1166,9 +1158,9 @@ tsl::elm::Element *set_antiAliasing::createUI() {
 	auto *clickableListItem3 = new tsl::elm::ListItem("Set 4x");
 	clickableListItem3->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		Utils::antiAliasing = 4;
-		dmntcht::write_antiAliasing();
-		return true;
+			Utils::antiAliasing = 4;
+			dmntcht::write_antiAliasing();
+			return true;
 		}
 
 		return false;
@@ -1179,9 +1171,9 @@ tsl::elm::Element *set_antiAliasing::createUI() {
 	auto *clickableListItem4 = new tsl::elm::ListItem("Set 8x");
 	clickableListItem4->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		Utils::antiAliasing = 8;
-		dmntcht::write_antiAliasing();
-		return true;
+			Utils::antiAliasing = 8;
+			dmntcht::write_antiAliasing();
+			return true;
 		}
 
 		return false;
@@ -1207,7 +1199,7 @@ void set_antiAliasing::update() {
 }
 
 tsl::elm::Element *set_asyncUploadTimeSlice::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
+	auto *Frame2 = new tsl::elm::OverlayFrame(Utils::overlayName, Utils::version);
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -1219,9 +1211,9 @@ tsl::elm::Element *set_asyncUploadTimeSlice::createUI() {
 	auto *clickableListItem = new tsl::elm::ListItem("Set 1");
 	clickableListItem->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		Utils::asyncUploadTimeSlice = 1;
-		dmntcht::write_asyncUploadTimeSlice();
-		return true;
+			Utils::asyncUploadTimeSlice = 1;
+			dmntcht::write_asyncUploadTimeSlice();
+			return true;
 		}
 
 		return false;
@@ -1232,9 +1224,9 @@ tsl::elm::Element *set_asyncUploadTimeSlice::createUI() {
 	auto *clickableListItem2 = new tsl::elm::ListItem("Increase");
 	clickableListItem2->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		if (Utils::asyncUploadTimeSlice != 33) Utils::asyncUploadTimeSlice++;
-		dmntcht::write_asyncUploadTimeSlice();
-		return true;
+			if (Utils::asyncUploadTimeSlice != 33) Utils::asyncUploadTimeSlice++;
+			dmntcht::write_asyncUploadTimeSlice();
+			return true;
 		}
 
 		return false;
@@ -1245,9 +1237,9 @@ tsl::elm::Element *set_asyncUploadTimeSlice::createUI() {
 	auto *clickableListItem3 = new tsl::elm::ListItem("Decrease");
 	clickableListItem3->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		if (Utils::asyncUploadTimeSlice != 1) Utils::asyncUploadTimeSlice--;
-		dmntcht::write_asyncUploadTimeSlice();
-		return true;
+			if (Utils::asyncUploadTimeSlice != 1) Utils::asyncUploadTimeSlice--;
+			dmntcht::write_asyncUploadTimeSlice();
+			return true;
 		}
 
 		return false;
@@ -1272,7 +1264,7 @@ void set_asyncUploadTimeSlice::update() {
 }
 
 tsl::elm::Element *set_asyncUploadBufferSize::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
+	auto *Frame2 = new tsl::elm::OverlayFrame(Utils::overlayName, Utils::version);
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -1284,9 +1276,9 @@ tsl::elm::Element *set_asyncUploadBufferSize::createUI() {
 	auto *clickableListItem = new tsl::elm::ListItem("Set 16");
 	clickableListItem->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		Utils::asyncUploadBufferSize = 16;
-		dmntcht::write_asyncUploadBufferSize();
-		return true;
+			Utils::asyncUploadBufferSize = 16;
+			dmntcht::write_asyncUploadBufferSize();
+			return true;
 		}
 
 		return false;
@@ -1297,12 +1289,12 @@ tsl::elm::Element *set_asyncUploadBufferSize::createUI() {
 	auto *clickableListItem2 = new tsl::elm::ListItem("Increase");
 	clickableListItem2->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		if (Utils::asyncUploadBufferSize != 512) {
-			if (Utils::asyncUploadBufferSize >= 8) Utils::asyncUploadBufferSize = Utils::asyncUploadBufferSize + 8;
-			else Utils::asyncUploadBufferSize = Utils::asyncUploadBufferSize + 2;
-		}
-		dmntcht::write_asyncUploadBufferSize();
-		return true;
+			if (Utils::asyncUploadBufferSize != 512) {
+				if (Utils::asyncUploadBufferSize >= 8) Utils::asyncUploadBufferSize = Utils::asyncUploadBufferSize + 8;
+				else Utils::asyncUploadBufferSize = Utils::asyncUploadBufferSize + 2;
+			}
+			dmntcht::write_asyncUploadBufferSize();
+			return true;
 		}
 
 		return false;
@@ -1313,12 +1305,12 @@ tsl::elm::Element *set_asyncUploadBufferSize::createUI() {
 	auto *clickableListItem3 = new tsl::elm::ListItem("Decrease");
 	clickableListItem3->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		if (Utils::asyncUploadBufferSize != 2) {
-			if (Utils::asyncUploadBufferSize >= 8) Utils::asyncUploadBufferSize = Utils::asyncUploadBufferSize - 8;
-			else Utils::asyncUploadBufferSize = Utils::asyncUploadBufferSize - 2;
-		}
-		dmntcht::write_asyncUploadBufferSize();
-		return true;
+			if (Utils::asyncUploadBufferSize != 2) {
+				if (Utils::asyncUploadBufferSize >= 8) Utils::asyncUploadBufferSize = Utils::asyncUploadBufferSize - 8;
+				else Utils::asyncUploadBufferSize = Utils::asyncUploadBufferSize - 2;
+			}
+			dmntcht::write_asyncUploadBufferSize();
+			return true;
 		}
 
 		return false;
@@ -1343,7 +1335,7 @@ void set_asyncUploadBufferSize::update() {
 }
 
 tsl::elm::Element *set_asyncUploadPersistentBuffer::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
+	auto *Frame2 = new tsl::elm::OverlayFrame(Utils::overlayName, Utils::version);
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -1355,9 +1347,9 @@ tsl::elm::Element *set_asyncUploadPersistentBuffer::createUI() {
 	auto *clickableListItem = new tsl::elm::ListItem("Change");
 	clickableListItem->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		Utils::asyncUploadPersistentBuffer = !Utils::asyncUploadPersistentBuffer;
-		dmntcht::write_asyncUploadPersistentBuffer();
-		return true;
+			Utils::asyncUploadPersistentBuffer = !Utils::asyncUploadPersistentBuffer;
+			dmntcht::write_asyncUploadPersistentBuffer();
+			return true;
 		}
 
 		return false;
@@ -1383,7 +1375,7 @@ void set_asyncUploadPersistentBuffer::update() {
 }
 
 tsl::elm::Element *set_realtimeReflectionProbes::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
+	auto *Frame2 = new tsl::elm::OverlayFrame(Utils::overlayName, Utils::version);
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -1395,9 +1387,9 @@ tsl::elm::Element *set_realtimeReflectionProbes::createUI() {
 	auto *clickableListItem = new tsl::elm::ListItem("Change");
 	clickableListItem->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		Utils::realtimeReflectionProbes = !Utils::realtimeReflectionProbes;
-		dmntcht::write_realtimeReflectionProbes();
-		return true;
+			Utils::realtimeReflectionProbes = !Utils::realtimeReflectionProbes;
+			dmntcht::write_realtimeReflectionProbes();
+			return true;
 		}
 
 		return false;
@@ -1423,7 +1415,7 @@ void set_realtimeReflectionProbes::update() {
 }
 
 tsl::elm::Element *set_billboardsFaceCameraPosition::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
+	auto *Frame2 = new tsl::elm::OverlayFrame(Utils::overlayName, Utils::version);
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -1435,9 +1427,9 @@ tsl::elm::Element *set_billboardsFaceCameraPosition::createUI() {
 	auto *clickableListItem = new tsl::elm::ListItem("Change");
 	clickableListItem->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		Utils::billboardsFaceCameraPosition = !Utils::billboardsFaceCameraPosition;
-		dmntcht::write_billboardsFaceCameraPosition();
-		return true;
+			Utils::billboardsFaceCameraPosition = !Utils::billboardsFaceCameraPosition;
+			dmntcht::write_billboardsFaceCameraPosition();
+			return true;
 		}
 
 		return false;
@@ -1463,7 +1455,7 @@ void set_billboardsFaceCameraPosition::update() {
 }
 
 tsl::elm::Element *set_resolutionScalingFixedDPIFactor::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
+	auto *Frame2 = new tsl::elm::OverlayFrame(Utils::overlayName, Utils::version);
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -1475,9 +1467,9 @@ tsl::elm::Element *set_resolutionScalingFixedDPIFactor::createUI() {
 	auto *clickableListItem = new tsl::elm::ListItem("Set 1");
 	clickableListItem->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		Utils::resolutionScalingFixedDPIFactor = 1;
-		dmntcht::write_resolutionScalingFixedDPIFactor();
-		return true;
+			Utils::resolutionScalingFixedDPIFactor = 1;
+			dmntcht::write_resolutionScalingFixedDPIFactor();
+			return true;
 		}
 
 		return false;
@@ -1510,23 +1502,23 @@ tsl::elm::Element *set_resolutionScalingFixedDPIFactor::createUI() {
 	auto *clickableListItem3 = new tsl::elm::ListItem("Decrease");
 	clickableListItem3->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		if (Utils::resolutionScalingFixedDPIFactor < 0.5) {
-			Utils::denominator = (float)1 / Utils::resolutionScalingFixedDPIFactor;
-			Utils::denominator = round(Utils::denominator);
-			Utils::denominator = Utils::denominator + 1;
-			if (Utils::resolutionScalingFixedDPIFactor != 0) Utils::resolutionScalingFixedDPIFactor = (float)1 / Utils::denominator;
-		}
-		else if (Utils::resolutionScalingFixedDPIFactor == 0.5) {
-			Utils::denominator = 3;
-			Utils::resolutionScalingFixedDPIFactor = 1 / Utils::denominator;
-		}
-		else {
-			Utils::resolutionScalingFixedDPIFactor = Utils::resolutionScalingFixedDPIFactor - 0.125;
-			if (Utils::resolutionScalingFixedDPIFactor < 0.5) Utils::resolutionScalingFixedDPIFactor = 0.5;
-		}
-		
-		dmntcht::write_resolutionScalingFixedDPIFactor();
-		return true;
+			if (Utils::resolutionScalingFixedDPIFactor < 0.5) {
+				Utils::denominator = (float)1 / Utils::resolutionScalingFixedDPIFactor;
+				Utils::denominator = round(Utils::denominator);
+				Utils::denominator = Utils::denominator + 1;
+				if (Utils::resolutionScalingFixedDPIFactor != 0) Utils::resolutionScalingFixedDPIFactor = (float)1 / Utils::denominator;
+			}
+			else if (Utils::resolutionScalingFixedDPIFactor == 0.5) {
+				Utils::denominator = 3;
+				Utils::resolutionScalingFixedDPIFactor = 1 / Utils::denominator;
+			}
+			else {
+				Utils::resolutionScalingFixedDPIFactor = Utils::resolutionScalingFixedDPIFactor - 0.125;
+				if (Utils::resolutionScalingFixedDPIFactor < 0.5) Utils::resolutionScalingFixedDPIFactor = 0.5;
+			}
+			
+			dmntcht::write_resolutionScalingFixedDPIFactor();
+			return true;
 		}
 
 		return false;
@@ -1551,7 +1543,7 @@ void set_resolutionScalingFixedDPIFactor::update() {
 }
 
 tsl::elm::Element *set_blendWeights::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
+	auto *Frame2 = new tsl::elm::OverlayFrame(Utils::overlayName, Utils::version);
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -1563,9 +1555,9 @@ tsl::elm::Element *set_blendWeights::createUI() {
 	auto *clickableListItem = new tsl::elm::ListItem("OneBone");
 	clickableListItem->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		Utils::BlendWeights = 1;
-		dmntcht::write_blendWeights();
-		return true;
+			Utils::BlendWeights = 1;
+			dmntcht::write_blendWeights();
+			return true;
 		}
 
 		return false;
@@ -1576,9 +1568,9 @@ tsl::elm::Element *set_blendWeights::createUI() {
 	auto *clickableListItem2 = new tsl::elm::ListItem("TwoBones");
 	clickableListItem2->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		Utils::BlendWeights = 2;
-		dmntcht::write_blendWeights();
-		return true;
+			Utils::BlendWeights = 2;
+			dmntcht::write_blendWeights();
+			return true;
 		}
 
 		return false;
@@ -1589,9 +1581,9 @@ tsl::elm::Element *set_blendWeights::createUI() {
 	auto *clickableListItem3 = new tsl::elm::ListItem("FourBones");
 	clickableListItem3->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		Utils::BlendWeights = 4;
-		dmntcht::write_blendWeights();
-		return true;
+			Utils::BlendWeights = 4;
+			dmntcht::write_blendWeights();
+			return true;
 		}
 
 		return false;
@@ -1619,7 +1611,7 @@ void set_blendWeights::update() {
 }
 
 tsl::elm::Element *set_streamingMipmapsActive::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
+	auto *Frame2 = new tsl::elm::OverlayFrame(Utils::overlayName, Utils::version);
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -1631,9 +1623,9 @@ tsl::elm::Element *set_streamingMipmapsActive::createUI() {
 	auto *clickableListItem = new tsl::elm::ListItem("Change");
 	clickableListItem->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		Utils::streamingMipmapsActive = !Utils::streamingMipmapsActive;
-		dmntcht::write_streamingMipmapsActive();
-		return true;
+			Utils::streamingMipmapsActive = !Utils::streamingMipmapsActive;
+			dmntcht::write_streamingMipmapsActive();
+			return true;
 		}
 
 		return false;
@@ -1659,7 +1651,7 @@ void set_streamingMipmapsActive::update() {
 }
 
 tsl::elm::Element *set_streamingMipmapsMemoryBudget::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
+	auto *Frame2 = new tsl::elm::OverlayFrame(Utils::overlayName, Utils::version);
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -1671,9 +1663,9 @@ tsl::elm::Element *set_streamingMipmapsMemoryBudget::createUI() {
 	auto *clickableListItem = new tsl::elm::ListItem("Set 128");
 	clickableListItem->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		Utils::streamingMipmapsMemoryBudget = 128;
-		dmntcht::write_streamingMipmapsMemoryBudget();
-		return true;
+			Utils::streamingMipmapsMemoryBudget = 128;
+			dmntcht::write_streamingMipmapsMemoryBudget();
+			return true;
 		}
 
 		return false;
@@ -1684,10 +1676,10 @@ tsl::elm::Element *set_streamingMipmapsMemoryBudget::createUI() {
 	auto *clickableListItem2 = new tsl::elm::ListItem("Increase");
 	clickableListItem2->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		if (Utils::streamingMipmapsMemoryBudget <= 128) Utils::streamingMipmapsMemoryBudget = Utils::streamingMipmapsMemoryBudget * 2;
-		else Utils::streamingMipmapsMemoryBudget = Utils::streamingMipmapsMemoryBudget + 128;
-		dmntcht::write_streamingMipmapsMemoryBudget();
-		return true;
+			if (Utils::streamingMipmapsMemoryBudget <= 128) Utils::streamingMipmapsMemoryBudget = Utils::streamingMipmapsMemoryBudget * 2;
+			else Utils::streamingMipmapsMemoryBudget = Utils::streamingMipmapsMemoryBudget + 128;
+			dmntcht::write_streamingMipmapsMemoryBudget();
+			return true;
 		}
 
 		return false;
@@ -1698,10 +1690,10 @@ tsl::elm::Element *set_streamingMipmapsMemoryBudget::createUI() {
 	auto *clickableListItem3 = new tsl::elm::ListItem("Decrease");
 	clickableListItem3->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		if (Utils::streamingMipmapsMemoryBudget <= 128) Utils::streamingMipmapsMemoryBudget = Utils::streamingMipmapsMemoryBudget / 2;
-		else Utils::streamingMipmapsMemoryBudget = Utils::streamingMipmapsMemoryBudget - 128;
-		dmntcht::write_streamingMipmapsMemoryBudget();
-		return true;
+			if (Utils::streamingMipmapsMemoryBudget <= 128) Utils::streamingMipmapsMemoryBudget = Utils::streamingMipmapsMemoryBudget / 2;
+			else Utils::streamingMipmapsMemoryBudget = Utils::streamingMipmapsMemoryBudget - 128;
+			dmntcht::write_streamingMipmapsMemoryBudget();
+			return true;
 		}
 
 		return false;
@@ -1726,7 +1718,7 @@ void set_streamingMipmapsMemoryBudget::update() {
 }
 
 tsl::elm::Element *set_streamingMipmapsMaxLevelReduction::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
+	auto *Frame2 = new tsl::elm::OverlayFrame(Utils::overlayName, Utils::version);
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -1738,9 +1730,9 @@ tsl::elm::Element *set_streamingMipmapsMaxLevelReduction::createUI() {
 	auto *clickableListItem = new tsl::elm::ListItem("Set 1");
 	clickableListItem->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		Utils::streamingMipmapsMaxLevelReduction = 1;
-		dmntcht::write_streamingMipmapsMaxLevelReduction();
-		return true;
+			Utils::streamingMipmapsMaxLevelReduction = 1;
+			dmntcht::write_streamingMipmapsMaxLevelReduction();
+			return true;
 		}
 
 		return false;
@@ -1751,9 +1743,9 @@ tsl::elm::Element *set_streamingMipmapsMaxLevelReduction::createUI() {
 	auto *clickableListItem2 = new tsl::elm::ListItem("Increase");
 	clickableListItem2->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		if (Utils::streamingMipmapsMaxLevelReduction != 7) Utils::streamingMipmapsMaxLevelReduction++;
-		dmntcht::write_streamingMipmapsMaxLevelReduction();
-		return true;
+			if (Utils::streamingMipmapsMaxLevelReduction != 7) Utils::streamingMipmapsMaxLevelReduction++;
+			dmntcht::write_streamingMipmapsMaxLevelReduction();
+			return true;
 		}
 
 		return false;
@@ -1764,9 +1756,9 @@ tsl::elm::Element *set_streamingMipmapsMaxLevelReduction::createUI() {
 	auto *clickableListItem3 = new tsl::elm::ListItem("Decrease");
 	clickableListItem3->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		if (Utils::streamingMipmapsMaxLevelReduction != 1) Utils::streamingMipmapsMaxLevelReduction--;
-		dmntcht::write_streamingMipmapsMaxLevelReduction();
-		return true;
+			if (Utils::streamingMipmapsMaxLevelReduction != 1) Utils::streamingMipmapsMaxLevelReduction--;
+			dmntcht::write_streamingMipmapsMaxLevelReduction();
+			return true;
 		}
 
 		return false;
@@ -1791,7 +1783,7 @@ void set_streamingMipmapsMaxLevelReduction::update() {
 }
 
 tsl::elm::Element *set_streamingMipmapsAddAllCameras::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
+	auto *Frame2 = new tsl::elm::OverlayFrame(Utils::overlayName, Utils::version);
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -1803,9 +1795,9 @@ tsl::elm::Element *set_streamingMipmapsAddAllCameras::createUI() {
 	auto *clickableListItem = new tsl::elm::ListItem("Change");
 	clickableListItem->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		Utils::streamingMipmapsAddAllCameras = !Utils::streamingMipmapsAddAllCameras;
-		dmntcht::write_streamingMipmapsAddAllCameras();
-		return true;
+			Utils::streamingMipmapsAddAllCameras = !Utils::streamingMipmapsAddAllCameras;
+			dmntcht::write_streamingMipmapsAddAllCameras();
+			return true;
 		}
 
 		return false;
@@ -1831,7 +1823,7 @@ void set_streamingMipmapsAddAllCameras::update() {
 }
 
 tsl::elm::Element *set_streamingMipmapsMaxFileIORequests::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
+	auto *Frame2 = new tsl::elm::OverlayFrame(Utils::overlayName, Utils::version);
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -1843,9 +1835,9 @@ tsl::elm::Element *set_streamingMipmapsMaxFileIORequests::createUI() {
 	auto *clickableListItem = new tsl::elm::ListItem("Set 128");
 	clickableListItem->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		Utils::streamingMipmapsMaxFileIORequests = 128;
-		dmntcht::write_streamingMipmapsMaxFileIORequests();
-		return true;
+			Utils::streamingMipmapsMaxFileIORequests = 128;
+			dmntcht::write_streamingMipmapsMaxFileIORequests();
+			return true;
 		}
 
 		return false;
@@ -1856,10 +1848,10 @@ tsl::elm::Element *set_streamingMipmapsMaxFileIORequests::createUI() {
 	auto *clickableListItem2 = new tsl::elm::ListItem("Increase");
 	clickableListItem2->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		if (Utils::streamingMipmapsMaxFileIORequests >= 128) Utils::streamingMipmapsMaxFileIORequests = Utils::streamingMipmapsMaxFileIORequests + 128;
-		else Utils::streamingMipmapsMaxFileIORequests = Utils::streamingMipmapsMaxFileIORequests * 2;
-		dmntcht::write_streamingMipmapsMaxFileIORequests();
-		return true;
+			if (Utils::streamingMipmapsMaxFileIORequests >= 128) Utils::streamingMipmapsMaxFileIORequests = Utils::streamingMipmapsMaxFileIORequests + 128;
+			else Utils::streamingMipmapsMaxFileIORequests = Utils::streamingMipmapsMaxFileIORequests * 2;
+			dmntcht::write_streamingMipmapsMaxFileIORequests();
+			return true;
 		}
 
 		return false;
@@ -1870,10 +1862,10 @@ tsl::elm::Element *set_streamingMipmapsMaxFileIORequests::createUI() {
 	auto *clickableListItem3 = new tsl::elm::ListItem("Decrease");
 	clickableListItem3->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		if (Utils::streamingMipmapsMaxFileIORequests > 128) Utils::streamingMipmapsMaxFileIORequests = Utils::streamingMipmapsMaxFileIORequests - 128;
-		else if (Utils::streamingMipmapsMaxFileIORequests != 1) Utils::streamingMipmapsMaxFileIORequests = Utils::streamingMipmapsMaxFileIORequests / 2;
-		dmntcht::write_streamingMipmapsMaxFileIORequests();
-		return true;
+			if (Utils::streamingMipmapsMaxFileIORequests > 128) Utils::streamingMipmapsMaxFileIORequests = Utils::streamingMipmapsMaxFileIORequests - 128;
+			else if (Utils::streamingMipmapsMaxFileIORequests != 1) Utils::streamingMipmapsMaxFileIORequests = Utils::streamingMipmapsMaxFileIORequests / 2;
+			dmntcht::write_streamingMipmapsMaxFileIORequests();
+			return true;
 		}
 
 		return false;
@@ -1899,7 +1891,7 @@ void set_streamingMipmapsMaxFileIORequests::update() {
 
 
 tsl::elm::Element *set_maxQueuedFrames::createUI() {
-	auto *Frame2 = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
+	auto *Frame2 = new tsl::elm::OverlayFrame(Utils::overlayName, Utils::version);
 	
 	auto list2 = new tsl::elm::List();
 	
@@ -1911,9 +1903,9 @@ tsl::elm::Element *set_maxQueuedFrames::createUI() {
 	auto *clickableListItem = new tsl::elm::ListItem("Set 1");
 	clickableListItem->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-		Utils::maxQueuedFrames = 1;
-		dmntcht::write_maxQueuedFrames();
-		return true;
+			Utils::maxQueuedFrames = 1;
+			dmntcht::write_maxQueuedFrames();
+			return true;
 		}
 
 		return false;
@@ -1989,7 +1981,7 @@ QualitySettings::QualitySettings() {
 
 tsl::elm::Element *QualitySettings::createUI() {
 	
-	auto *frame = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
+	auto *frame = new tsl::elm::OverlayFrame(Utils::overlayName, Utils::version);
 	
 	auto list = new tsl::elm::List();
 	
@@ -2000,8 +1992,8 @@ tsl::elm::Element *QualitySettings::createUI() {
 			auto *pixelLightCountauto = new tsl::elm::ListItem("pixelLightCount", "int");
 			pixelLightCountauto->setClickListener([](u64 keys) { 
 				if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-				tsl::changeTo<set_pixelLightCount>();
-				return true;
+					tsl::changeTo<set_pixelLightCount>();
+					return true;
 				}
 				return false;
 			});
@@ -2013,8 +2005,8 @@ tsl::elm::Element *QualitySettings::createUI() {
 			auto *shadowQualityauto = new tsl::elm::ListItem("shadowQuality", "enum");
 			shadowQualityauto->setClickListener([](u64 keys) { 
 				if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-				tsl::changeTo<set_shadows>();
-				return true;
+					tsl::changeTo<set_shadows>();
+					return true;
 				}
 				return false;
 			});
@@ -2026,8 +2018,8 @@ tsl::elm::Element *QualitySettings::createUI() {
 			auto *shadowProjectionauto = new tsl::elm::ListItem("shadowProjection", "enum");
 			shadowProjectionauto->setClickListener([](u64 keys) { 
 				if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-				tsl::changeTo<set_shadowProjection>();
-				return true;
+					tsl::changeTo<set_shadowProjection>();
+					return true;
 				}
 				return false;
 			});
@@ -2039,8 +2031,8 @@ tsl::elm::Element *QualitySettings::createUI() {
 			auto *shadowCascadesauto = new tsl::elm::ListItem("shadowCascades", "int");
 			shadowCascadesauto->setClickListener([](u64 keys) { 
 				if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-				tsl::changeTo<set_shadowCascades>();
-				return true;
+					tsl::changeTo<set_shadowCascades>();
+					return true;
 				}
 				return false;
 			});
@@ -2052,8 +2044,8 @@ tsl::elm::Element *QualitySettings::createUI() {
 			auto *shadowDistanceauto = new tsl::elm::ListItem("shadowDistance", "float");
 			shadowDistanceauto->setClickListener([](u64 keys) { 
 				if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-				tsl::changeTo<set_shadowDistance>();
-				return true;
+					tsl::changeTo<set_shadowDistance>();
+					return true;
 				}
 				return false;
 			});
@@ -2065,8 +2057,8 @@ tsl::elm::Element *QualitySettings::createUI() {
 			auto *shadowResolutionauto = new tsl::elm::ListItem("shadowResolution", "enum");
 			shadowResolutionauto->setClickListener([](u64 keys) { 
 				if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-				tsl::changeTo<set_shadowResolution>();
-				return true;
+					tsl::changeTo<set_shadowResolution>();
+					return true;
 				}
 				return false;
 			});
@@ -2078,8 +2070,8 @@ tsl::elm::Element *QualitySettings::createUI() {
 			auto *shadowmaskModeauto = new tsl::elm::ListItem("shadowmaskMode", "enum");
 			shadowmaskModeauto->setClickListener([](u64 keys) { 
 				if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-				tsl::changeTo<set_shadowmaskMode>();
-				return true;
+					tsl::changeTo<set_shadowmaskMode>();
+					return true;
 				}
 				return false;
 			});
@@ -2091,8 +2083,8 @@ tsl::elm::Element *QualitySettings::createUI() {
 			auto *shadowNearPlaneOffsetauto = new tsl::elm::ListItem("shadowNearPlaneOffset", "float");
 			shadowNearPlaneOffsetauto->setClickListener([](u64 keys) { 
 				if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-				tsl::changeTo<set_shadowNearPlaneOffset>();
-				return true;
+					tsl::changeTo<set_shadowNearPlaneOffset>();
+					return true;
 				}
 				return false;
 			});
@@ -2104,8 +2096,8 @@ tsl::elm::Element *QualitySettings::createUI() {
 			auto *shadowCascade2Splitauto = new tsl::elm::ListItem("shadowCascade2Split", "float");
 			shadowCascade2Splitauto->setClickListener([](u64 keys) { 
 				if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-				tsl::changeTo<set_shadowCascade2Split>();
-				return true;
+					tsl::changeTo<set_shadowCascade2Split>();
+					return true;
 				}
 				return false;
 			});
@@ -2117,8 +2109,8 @@ tsl::elm::Element *QualitySettings::createUI() {
 			auto *lodBiasauto = new tsl::elm::ListItem("lodBias", "float");
 			lodBiasauto->setClickListener([](u64 keys) { 
 				if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-				tsl::changeTo<set_lodBias>();
-				return true;
+					tsl::changeTo<set_lodBias>();
+					return true;
 				}
 				return false;
 			});
@@ -2130,8 +2122,8 @@ tsl::elm::Element *QualitySettings::createUI() {
 			auto *AnisotropicFilteringauto = new tsl::elm::ListItem("AnisotropicFiltering", "enum");
 			AnisotropicFilteringauto->setClickListener([](u64 keys) { 
 				if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-				tsl::changeTo<set_anisotropicFiltering>();
-				return true;
+					tsl::changeTo<set_anisotropicFiltering>();
+					return true;
 				}
 				return false;
 			});
@@ -2143,8 +2135,8 @@ tsl::elm::Element *QualitySettings::createUI() {
 			auto *masterTextureLimitauto = new tsl::elm::ListItem("masterTextureLimit", "int");
 			masterTextureLimitauto->setClickListener([](u64 keys) { 
 				if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-				tsl::changeTo<set_masterTextureLimit>();
-				return true;
+					tsl::changeTo<set_masterTextureLimit>();
+					return true;
 				}
 				return false;
 			});
@@ -2156,8 +2148,8 @@ tsl::elm::Element *QualitySettings::createUI() {
 			auto *maximumLODLevelauto = new tsl::elm::ListItem("maximumLODLevel", "int");
 			maximumLODLevelauto->setClickListener([](u64 keys) { 
 				if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-				tsl::changeTo<set_maximumLODLevel>();
-				return true;
+					tsl::changeTo<set_maximumLODLevel>();
+					return true;
 				}
 				return false;
 			});
@@ -2169,8 +2161,8 @@ tsl::elm::Element *QualitySettings::createUI() {
 			auto *particleRaycastBudgetauto = new tsl::elm::ListItem("particleRaycastBudget", "int");
 			particleRaycastBudgetauto->setClickListener([](u64 keys) { 
 				if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-				tsl::changeTo<set_particleRaycastBudget>();
-				return true;
+					tsl::changeTo<set_particleRaycastBudget>();
+					return true;
 				}
 				return false;
 			});
@@ -2182,8 +2174,8 @@ tsl::elm::Element *QualitySettings::createUI() {
 			auto *softParticlesauto = new tsl::elm::ListItem("softParticles", "bool");
 			softParticlesauto->setClickListener([](u64 keys) { 
 				if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-				tsl::changeTo<set_softParticles>();
-				return true;
+					tsl::changeTo<set_softParticles>();
+					return true;
 				}
 				return false;
 			});
@@ -2195,8 +2187,8 @@ tsl::elm::Element *QualitySettings::createUI() {
 			auto *softVegetationauto = new tsl::elm::ListItem("softVegetation", "bool");
 			softVegetationauto->setClickListener([](u64 keys) { 
 				if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-				tsl::changeTo<set_softVegetation>();
-				return true;
+					tsl::changeTo<set_softVegetation>();
+					return true;
 				}
 				return false;
 			});
@@ -2208,8 +2200,8 @@ tsl::elm::Element *QualitySettings::createUI() {
 			auto *vSyncCountauto = new tsl::elm::ListItem("vSyncCount", "int");
 			vSyncCountauto->setClickListener([](u64 keys) { 
 				if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-				tsl::changeTo<set_vSyncCount>();
-				return true;
+					tsl::changeTo<set_vSyncCount>();
+					return true;
 				}
 				return false;
 			});
@@ -2221,8 +2213,8 @@ tsl::elm::Element *QualitySettings::createUI() {
 			auto *antiAliasingauto = new tsl::elm::ListItem("antiAliasing", "enum");
 			antiAliasingauto->setClickListener([](u64 keys) { 
 				if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-				tsl::changeTo<set_antiAliasing>();
-				return true;
+					tsl::changeTo<set_antiAliasing>();
+					return true;
 				}
 				return false;
 			});
@@ -2234,8 +2226,8 @@ tsl::elm::Element *QualitySettings::createUI() {
 			auto *asyncUploadTimeSliceauto = new tsl::elm::ListItem("asyncUploadTimeSlice", "int");
 			asyncUploadTimeSliceauto->setClickListener([](u64 keys) { 
 				if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-				tsl::changeTo<set_asyncUploadTimeSlice>();
-				return true;
+					tsl::changeTo<set_asyncUploadTimeSlice>();
+					return true;
 				}
 				return false;
 			});
@@ -2247,8 +2239,8 @@ tsl::elm::Element *QualitySettings::createUI() {
 			auto *asyncUploadBufferSizeauto = new tsl::elm::ListItem("asyncUploadBufferSize", "int");
 			asyncUploadBufferSizeauto->setClickListener([](u64 keys) { 
 				if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-				tsl::changeTo<set_asyncUploadBufferSize>();
-				return true;
+					tsl::changeTo<set_asyncUploadBufferSize>();
+					return true;
 				}
 				return false;
 			});
@@ -2260,8 +2252,8 @@ tsl::elm::Element *QualitySettings::createUI() {
 			auto *asyncUploadPersistentBufferauto = new tsl::elm::ListItem("asyncUploadPersistentBuffer", "bool");
 			asyncUploadPersistentBufferauto->setClickListener([](u64 keys) { 
 				if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-				tsl::changeTo<set_asyncUploadPersistentBuffer>();
-				return true;
+					tsl::changeTo<set_asyncUploadPersistentBuffer>();
+					return true;
 				}
 				return false;
 			});
@@ -2273,8 +2265,8 @@ tsl::elm::Element *QualitySettings::createUI() {
 			auto *realtimeReflectionProbesauto = new tsl::elm::ListItem("realtimeReflectionProbes", "bool");
 			realtimeReflectionProbesauto->setClickListener([](u64 keys) { 
 				if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-				tsl::changeTo<set_realtimeReflectionProbes>();
-				return true;
+					tsl::changeTo<set_realtimeReflectionProbes>();
+					return true;
 				}
 				return false;
 			});
@@ -2286,8 +2278,8 @@ tsl::elm::Element *QualitySettings::createUI() {
 			auto *billboardsFaceCameraPositionauto = new tsl::elm::ListItem("billboardsFaceCameraPosition", "bool");
 			billboardsFaceCameraPositionauto->setClickListener([](u64 keys) { 
 				if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-				tsl::changeTo<set_billboardsFaceCameraPosition>();
-				return true;
+					tsl::changeTo<set_billboardsFaceCameraPosition>();
+					return true;
 				}
 				return false;
 			});
@@ -2299,8 +2291,8 @@ tsl::elm::Element *QualitySettings::createUI() {
 			auto *resolutionScalingFixedDPIFactorauto = new tsl::elm::ListItem("resolutionScalingFixedDPIFactor", "float");
 			resolutionScalingFixedDPIFactorauto->setClickListener([](u64 keys) { 
 				if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-				tsl::changeTo<set_resolutionScalingFixedDPIFactor>();
-				return true;
+					tsl::changeTo<set_resolutionScalingFixedDPIFactor>();
+					return true;
 				}
 				return false;
 			});
@@ -2312,8 +2304,8 @@ tsl::elm::Element *QualitySettings::createUI() {
 			auto *BlendWeightsauto = new tsl::elm::ListItem("BlendWeights", "enum");
 			BlendWeightsauto->setClickListener([](u64 keys) { 
 				if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-				tsl::changeTo<set_blendWeights>();
-				return true;
+					tsl::changeTo<set_blendWeights>();
+					return true;
 				}
 				return false;
 			});
@@ -2325,8 +2317,8 @@ tsl::elm::Element *QualitySettings::createUI() {
 			auto *streamingMipmapsActiveauto = new tsl::elm::ListItem("streamingMipmapsActive", "bool");
 			streamingMipmapsActiveauto->setClickListener([](u64 keys) { 
 				if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-				tsl::changeTo<set_streamingMipmapsActive>();
-				return true;
+					tsl::changeTo<set_streamingMipmapsActive>();
+					return true;
 				}
 				return false;
 			});
@@ -2338,8 +2330,8 @@ tsl::elm::Element *QualitySettings::createUI() {
 			auto *streamingMipmapsMemoryBudgetauto = new tsl::elm::ListItem("streamingMipmapsMemoryBudget", "float");
 			streamingMipmapsMemoryBudgetauto->setClickListener([](u64 keys) { 
 				if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-				tsl::changeTo<set_streamingMipmapsMemoryBudget>();
-				return true;
+					tsl::changeTo<set_streamingMipmapsMemoryBudget>();
+					return true;
 				}
 				return false;
 			});
@@ -2351,8 +2343,8 @@ tsl::elm::Element *QualitySettings::createUI() {
 			auto *streamingMipmapsMaxLevelReductionauto = new tsl::elm::ListItem("streamingMipmapsMaxLevelReduction", "int");
 			streamingMipmapsMaxLevelReductionauto->setClickListener([](u64 keys) { 
 				if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-				tsl::changeTo<set_streamingMipmapsMaxLevelReduction>();
-				return true;
+					tsl::changeTo<set_streamingMipmapsMaxLevelReduction>();
+					return true;
 				}
 				return false;
 			});
@@ -2364,8 +2356,8 @@ tsl::elm::Element *QualitySettings::createUI() {
 			auto *streamingMipmapsAddAllCamerasauto = new tsl::elm::ListItem("streamingMipmapsAddAllCameras", "bool");
 			streamingMipmapsAddAllCamerasauto->setClickListener([](u64 keys) { 
 				if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-				tsl::changeTo<set_streamingMipmapsAddAllCameras>();
-				return true;
+					tsl::changeTo<set_streamingMipmapsAddAllCameras>();
+					return true;
 				}
 				return false;
 			});
@@ -2377,8 +2369,8 @@ tsl::elm::Element *QualitySettings::createUI() {
 			auto *streamingMipmapsMaxFileIORequestsauto = new tsl::elm::ListItem("streamingMipmapsMaxFileIORequests", "int");
 			streamingMipmapsMaxFileIORequestsauto->setClickListener([](u64 keys) { 
 				if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-				tsl::changeTo<set_streamingMipmapsMaxFileIORequests>();
-				return true;
+					tsl::changeTo<set_streamingMipmapsMaxFileIORequests>();
+					return true;
 				}
 				return false;
 			});
@@ -2390,8 +2382,8 @@ tsl::elm::Element *QualitySettings::createUI() {
 			auto *maxQueuedFramesauto = new tsl::elm::ListItem("maxQueuedFrames", "int");
 			maxQueuedFramesauto->setClickListener([](u64 keys) { 
 				if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-				tsl::changeTo<set_maxQueuedFrames>();
-				return true;
+					tsl::changeTo<set_maxQueuedFrames>();
+					return true;
 				}
 				return false;
 			});

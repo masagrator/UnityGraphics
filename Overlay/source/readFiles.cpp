@@ -431,6 +431,29 @@ namespace nullify {
 				break;
 		}
 	}
+	
+	void ScalableBufferManager (uint8_t m_switchcase) {
+		switch(m_switchcase) {
+			//"UnityEngine.ScalableBufferManager::get_widthScaleFactor"
+			case 1:
+				Utils::widthScaleFactor_address = 0x0;
+				break;
+
+			//"UnityEngine.ScalableBufferManager::get_heightScaleFactor"
+			case 2:
+				Utils::heightScaleFactor_address = 0x0;
+				break;
+				
+			//"UnityEngine.ScalableBufferManager::ResizeBuffers"
+			case 3:
+				Utils::widthScaleFactor_address = 0x0;
+				Utils::heightScaleFactor_address = 0x0;
+				break;
+			
+			default:
+				break;
+		}
+	}
 }
 
 namespace Utils {
@@ -479,6 +502,9 @@ namespace Utils {
 	uintptr_t width_address = 0x0;
 	uintptr_t height_address = 0x0;
 	
+	uintptr_t widthScaleFactor_address = 0x0;
+	uintptr_t heightScaleFactor_address = 0x0;
+	
 	uint32_t pixelLightCount = 0;
 	uint32_t ShadowQuality = 0;
 	uint32_t ShadowProjection = 0;
@@ -513,6 +539,9 @@ namespace Utils {
 	
 	uint32_t width = 0;
 	uint32_t height = 0;
+	
+	float widthScaleFactor = 0;
+	float heightScaleFactor = 0;
 	
 	char BID_File[192];
 	char BID_File2[196];
@@ -558,7 +587,10 @@ namespace Utils {
 			
 			fread(&width_address, 0x5, 1, offset);
 			fread(&height_address, 0x5, 1, offset);
-			
+
+			fread(&widthScaleFactor_address, 0x5, 1, offset);
+			fread(&heightScaleFactor_address, 0x5, 1, offset);
+
 			FILE* __BID_File = fopen(BID_File, "rb");	
 			if (__BID_File != NULL) {
 				
@@ -616,6 +648,26 @@ namespace Utils {
 						if (i == 3) error = 16;
 						else error = i;
 						nullify::Screen(error);
+					}
+					fread(&address_function, 0x5, 1, offset);
+					if (error == 0) dmntchtWriteCheatProcessMemory(address_function, &ptr_function, 0x5);
+				}
+
+				///Read offsets for ScalableBufferManager settings, add main base address to pointers and inject them to game code
+				for (uint8_t i = 1; i <= 3; i++) {
+					uint64_t ptr_function = 0;
+					uint64_t address_function = 0;
+					uint8_t error = 0;
+
+					//get
+					fread(&ptr_function, 0x4, 1, __BID_File);
+					if (ptr_function != 0) {
+						ptr_function = __builtin_bswap32((uint32_t)ptr_function);
+						ptr_function = ptr_function + dmnt_metadata.main_nso_extents.base;
+					}
+					else {
+						error = i;
+						nullify::ScalableBufferManager(error);
 					}
 					fread(&address_function, 0x5, 1, offset);
 					if (error == 0) dmntchtWriteCheatProcessMemory(address_function, &ptr_function, 0x5);

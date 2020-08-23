@@ -1,5 +1,5 @@
 #include <tesla.hpp>
-#include "libstratosphere/dmntcht.hpp"
+#include "dmntcht.h"
 #include <inttypes.h>
 
 namespace nullify {
@@ -55,6 +55,9 @@ namespace Utils {
 	extern uintptr_t width_address;
 	extern uintptr_t height_address;
 	
+	extern uintptr_t widthScaleFactor_address;
+	extern uintptr_t heightScaleFactor_address;	
+
 	extern uint32_t pixelLightCount;
 	extern uint32_t ShadowQuality;
 	extern uint32_t ShadowProjection;
@@ -89,6 +92,9 @@ namespace Utils {
 	
 	extern uint32_t width;
 	extern uint32_t height;
+	
+	extern float widthScaleFactor;
+	extern float heightScaleFactor;
 	
 	extern char BID_File[192];
 	extern char BID_File2[196];

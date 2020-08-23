@@ -1,6 +1,6 @@
 #define TESLA_INIT_IMPL // If you have more than one file using the tesla header, only define this in the main one
 #include <tesla.hpp>    // The Tesla Header
-#include "libstratosphere/dmntcht.hpp"
+#include "dmntcht.h"
 #include <inttypes.h>
 #include "readFiles.hpp"
 #include "dmntchtRead.hpp"
@@ -8,6 +8,7 @@
 #include "Utils.hpp"
 #include "UnityQuality.hpp"
 #include "UnityScreen.hpp"
+#include "UnityScalableBufferManager.hpp"
 
 bool SaltySD = false;
 bool bak = false;
@@ -28,7 +29,7 @@ public:
 	virtual tsl::elm::Element* createUI() override {
 		// A OverlayFrame is the base element every overlay consists of. This will draw the default Title and Subtitle.
 		// If you need more information in the header or want to change it's look, use a HeaderOverlayFrame.
-		auto frame = new tsl::elm::OverlayFrame("UnityGraphics", "v0.1.1");
+		auto frame = new tsl::elm::OverlayFrame(Utils::overlayName, Utils::version);
 
 		// A list that can contain sub elements and handles scrolling
 		auto list = new tsl::elm::List();
@@ -79,6 +80,17 @@ public:
 			});
 
 			list->addItem(Screenauto);
+			
+			auto *ScalableBufferManagerauto = new tsl::elm::ListItem("ScalableBufferManager");
+			ScalableBufferManagerauto->setClickListener([](u64 keys) { 
+				if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
+					tsl::changeTo<ScalableBufferManagerSettings>();
+					return true;
+				}
+				return false;
+			});
+
+			list->addItem(ScalableBufferManagerauto);
 		}
 		
 		else if (SaltySD == true && plugin == true && Utils::check == false) {

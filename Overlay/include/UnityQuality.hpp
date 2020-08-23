@@ -1,7 +1,7 @@
 #pragma once
 
 #include <tesla.hpp>
-#include "libstratosphere/dmntcht.hpp"
+#include "dmntcht.h"
 #include "dmntchtRead.hpp"
 #include "dmntchtWrite.hpp"
 #include "Utils.hpp"

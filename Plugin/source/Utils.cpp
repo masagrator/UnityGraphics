@@ -18,6 +18,10 @@ namespace Utils {
 		SaltySDCore_fwrite(&ptr, 0x5, 1, offset);
 		ptr = (uint64_t)&MAGIC;
 		SaltySDCore_fwrite(&ptr, 0x5, 1, offset);
+		
+		///Values
+		//
+		//
 
 		ptr = (uint64_t)&UnitySettings::Quality::pixelLightCount;
 		SaltySDCore_fwrite(&ptr, 0x5, 1, offset);
@@ -87,6 +91,15 @@ namespace Utils {
 		ptr = (uint64_t)&UnitySettings::Screen::height;
 		SaltySDCore_fwrite(&ptr, 0x5, 1, offset);
 		
+		ptr = (uint64_t)&UnitySettings::ScalableBufferManager::widthScaleFactor;
+		SaltySDCore_fwrite(&ptr, 0x5, 1, offset);
+		ptr = (uint64_t)&UnitySettings::ScalableBufferManager::heightScaleFactor;
+		SaltySDCore_fwrite(&ptr, 0x5, 1, offset);
+
+		
+		///Pointers
+		//
+		//
 
 		ptr = (uint64_t)&UnitySettings::Quality::ptr_get_pixelLightCount;
 		SaltySDCore_fwrite(&ptr, 0x5, 1, offset);
@@ -249,7 +262,13 @@ namespace Utils {
 		SaltySDCore_fwrite(&ptr, 0x5, 1, offset);
 		ptr = (uint64_t)&UnitySettings::Screen::ptr_SetResolution;
 		SaltySDCore_fwrite(&ptr, 0x5, 1, offset);
-		
+
+		ptr = (uint64_t)&UnitySettings::ScalableBufferManager::ptr_get_widthScaleFactor;
+		SaltySDCore_fwrite(&ptr, 0x5, 1, offset);
+		ptr = (uint64_t)&UnitySettings::ScalableBufferManager::ptr_get_heightScaleFactor;
+		SaltySDCore_fwrite(&ptr, 0x5, 1, offset);
+		ptr = (uint64_t)&UnitySettings::ScalableBufferManager::ptr_ResizeBuffers;
+		SaltySDCore_fwrite(&ptr, 0x5, 1, offset);
 		SaltySDCore_fclose(offset);
 	}
 }

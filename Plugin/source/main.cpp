@@ -3,7 +3,6 @@
 #include "saltysd/SaltySD_core.h"
 #include "saltysd/SaltySD_ipc.h"
 #include "saltysd/SaltySD_dynamic.h"
-#include "QualitySettings.hpp"
 #include "Utils.hpp"
 #include <inttypes.h>
 #include <cstdlib>
@@ -66,8 +65,22 @@ void __attribute__((weak)) NORETURN __libnx_exit(int rc) {
 
 void SleepThread(void* unknown) {
 	if (Utils::switchcase == 0) return _ZN2nn2os11SleepThreadENS_8TimeSpanE(unknown);
-	else if (Utils::_settings == Utils::Quality) UnitySettings::Quality::Change(Utils::switchcase);
-	else if (Utils::_settings == Utils::Screen) UnitySettings::Screen::Change(Utils::switchcase);
+	switch(Utils::_settings) {
+		case Utils::Quality:
+			UnitySettings::Quality::Change(Utils::switchcase);
+			break;
+		
+		case Utils::Screen:
+			UnitySettings::Screen::Change(Utils::switchcase);
+			break;
+		
+		case Utils::ScalableBufferManager:
+			UnitySettings::ScalableBufferManager::Change(Utils::switchcase);
+			break;
+		
+		default:
+			break;
+	}
 	
 	Utils::switchcase = 0;
 	

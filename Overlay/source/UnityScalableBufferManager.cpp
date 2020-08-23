@@ -1,12 +1,12 @@
-#include "UnityScreen.hpp"
+#include "UnityScalableBufferManager.hpp"
 
-///* Screen Settings Options
+///* ScalableBufferManager Settings Options
 ///
 ///
 //
 /////////////////////////////////////////////////////////////////////////////////
 
-tsl::elm::Element *SetResolution::createUI() {
+tsl::elm::Element *ResizeBuffers::createUI() {
 	auto *Frame2 = new tsl::elm::OverlayFrame(Utils::overlayName, Utils::version);
 		
 	auto list2 = new tsl::elm::List();
@@ -16,12 +16,12 @@ tsl::elm::Element *SetResolution::createUI() {
 }), 25);
 
 	list2->addItem(new tsl::elm::CategoryHeader("Options"));
-	auto *clickableListItem1 = new tsl::elm::ListItem("640x360");
+	auto *clickableListItem1 = new tsl::elm::ListItem("25%");
 	clickableListItem1->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-			Utils::width = 640;
-			Utils::height = 360;
-			dmntcht::write_SetResolution();
+			Utils::widthScaleFactor = 0.25;
+			Utils::heightScaleFactor = 0.25;
+			dmntcht::write_ResizeBuffers();
 		return true;
 		}
 
@@ -30,12 +30,12 @@ tsl::elm::Element *SetResolution::createUI() {
 	
 	list2->addItem(clickableListItem1);
 
-	auto *clickableListItem2 = new tsl::elm::ListItem("960x540");
+	auto *clickableListItem2 = new tsl::elm::ListItem("33%");
 	clickableListItem2->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-			Utils::width = 960;
-			Utils::height = 540;
-			dmntcht::write_SetResolution();
+			Utils::widthScaleFactor = 0.33;
+			Utils::heightScaleFactor = 0.33;
+			dmntcht::write_ResizeBuffers();
 		return true;
 		}
 
@@ -44,12 +44,12 @@ tsl::elm::Element *SetResolution::createUI() {
 		
 	list2->addItem(clickableListItem2);
 		
-	auto *clickableListItem3 = new tsl::elm::ListItem("1280x720");
+	auto *clickableListItem3 = new tsl::elm::ListItem("50%");
 	clickableListItem3->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-			Utils::width = 1280;
-			Utils::height = 720;
-			dmntcht::write_SetResolution();
+			Utils::widthScaleFactor = 0.5;
+			Utils::heightScaleFactor = 0.5;
+			dmntcht::write_ResizeBuffers();
 		return true;
 		}
 
@@ -58,12 +58,12 @@ tsl::elm::Element *SetResolution::createUI() {
 		
 	list2->addItem(clickableListItem3);
 	
-	auto *clickableListItem4 = new tsl::elm::ListItem("1600x900");
+	auto *clickableListItem4 = new tsl::elm::ListItem("75%");
 	clickableListItem4->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-			Utils::width = 1600;
-			Utils::height = 900;
-			dmntcht::write_SetResolution();
+			Utils::widthScaleFactor = 0.75;
+			Utils::heightScaleFactor = 0.75;
+			dmntcht::write_ResizeBuffers();
 		return true;
 		}
 
@@ -72,12 +72,12 @@ tsl::elm::Element *SetResolution::createUI() {
 		
 	list2->addItem(clickableListItem4);
 		
-	auto *clickableListItem5 = new tsl::elm::ListItem("1920x1080");
+	auto *clickableListItem5 = new tsl::elm::ListItem("100%");
 	clickableListItem5->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-			Utils::width = 1920;
-			Utils::height = 1080;
-			dmntcht::write_SetResolution();
+			Utils::widthScaleFactor = 1.0;
+			Utils::heightScaleFactor = 1.0;
+			dmntcht::write_ResizeBuffers();
 		return true;
 		}
 
@@ -91,16 +91,16 @@ tsl::elm::Element *SetResolution::createUI() {
 	return Frame2;
 }
 	
-void SetResolution::update() {
+void ResizeBuffers::update() {
 	if (R_FAILED(pmdmntGetApplicationProcessId(&Utils::PID))) {
 		remove("sdmc:/SaltySD/UnityGraphics.hex");
 		Utils::PluginRunning = false;
 		Utils::check = false;
 		Utils::closed = true;
 	}
-	dmntchtReadCheatProcessMemory(Utils::width_address, &Utils::width, 0x4);
-	dmntchtReadCheatProcessMemory(Utils::height_address, &Utils::height, 0x4);
-	sprintf(Utils::OptionsChar, "Resolution: %u" "x%u", Utils::width, Utils::height);
+	dmntchtReadCheatProcessMemory(Utils::widthScaleFactor_address, &Utils::widthScaleFactor, 0x4);
+	dmntchtReadCheatProcessMemory(Utils::heightScaleFactor_address, &Utils::heightScaleFactor, 0x4);
+	sprintf(Utils::OptionsChar, "Width: %.2f%s, Height: %.2f%s", Utils::widthScaleFactor * (float)100, "%", Utils::heightScaleFactor * (float)100, "%");
 }
 
 ///* Screen Settings Menu
@@ -109,12 +109,11 @@ void SetResolution::update() {
 //
 /////////////////////////////////////////////////////////////////////////////////
 
-ScreenSettings::ScreenSettings() {
-		if (Utils::Screen_read == false) {
-			for (uint8_t i = 1; i <= 3; i++) {
-				if (i == 3) i = 16;
+ScalableBufferManagerSettings::ScalableBufferManagerSettings() {
+		if (Utils::ScalableBufferManager_read == false) {
+			for (uint8_t i = 1; i <= 2; i++) {
 				Utils::switchcase = i;
-				Utils::settings = 2;
+				Utils::settings = 3;
 				dmntchtWriteCheatProcessMemory(Utils::settings_address, &Utils::settings, 0x1);
 				dmntchtWriteCheatProcessMemory(Utils::switchcase_address, &Utils::switchcase, 0x1);
 				svcSleepThread(34'000'000);
@@ -122,31 +121,31 @@ ScreenSettings::ScreenSettings() {
 			Utils::settings = 0;
 			Utils::switchcase = 0;
 			dmntcht::Read();
-			Utils::Screen_read = true;
+			Utils::ScalableBufferManager_read = true;
 	}
 }
 	
 
-tsl::elm::Element *ScreenSettings::createUI() {
+tsl::elm::Element *ScalableBufferManagerSettings::createUI() {
 	
 	auto *frame = new tsl::elm::OverlayFrame(Utils::overlayName, Utils::version);
 	
 	auto list = new tsl::elm::List();
 	
 	if (Utils::MAGIC == 0x16BA7E38 && Utils::notsupported == false) {
-		list->addItem(new tsl::elm::CategoryHeader("Screen Settings"));
+		list->addItem(new tsl::elm::CategoryHeader("ScalableBufferManager Settings"));
 		
 		if (Utils::width_address != 0 && Utils::height_address != 0) {
-			auto *SetResolutionauto = new tsl::elm::ListItem("SetResolution", "enum");
-			SetResolutionauto->setClickListener([](u64 keys) { 
+			auto *ResizeBuffersauto = new tsl::elm::ListItem("ResizeBuffers", "enum");
+			ResizeBuffersauto->setClickListener([](u64 keys) { 
 				if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-					tsl::changeTo<SetResolution>();
+					tsl::changeTo<ResizeBuffers>();
 					return true;
 				}
 				return false;
 			});
 
-			list->addItem(SetResolutionauto);
+			list->addItem(ResizeBuffersauto);
 		}
 		
 	}
@@ -159,7 +158,7 @@ tsl::elm::Element *ScreenSettings::createUI() {
 	
 }
 	
-void ScreenSettings::update() {
+void ScalableBufferManagerSettings::update() {
 	if (R_FAILED(pmdmntGetApplicationProcessId(&Utils::PID))) {
 		remove("sdmc:/SaltySD/UnityGraphics.hex");
 		Utils::PluginRunning = false;

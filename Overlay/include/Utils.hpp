@@ -1,5 +1,5 @@
 #include <tesla.hpp>
-#include "libstratosphere/dmntcht.hpp"
+#include "dmntcht.h"
 #include "dmntchtRead.hpp"
 #include "dmntchtWrite.hpp"
 
@@ -15,6 +15,8 @@ namespace Utils {
 	extern bool Quality_read;
 	extern bool notsupported;
 	extern bool Screen_read;
+	extern bool ScalableBufferManager_read;
+	extern bool Camera_read;
 
 	extern uint32_t MAGIC;
 	
@@ -22,5 +24,8 @@ namespace Utils {
 	
 	bool CheckPort ();
 	bool isServiceRunning(const char *serviceName);
+	
+	extern const std::string overlayName;
+	extern std::string version;
 }
 

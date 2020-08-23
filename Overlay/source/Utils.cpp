@@ -11,6 +11,10 @@ namespace Utils {
 	bool Quality_read = false;
 	bool notsupported = false;
 	bool Screen_read = false;
+	bool ScalableBufferManager_read = false;
+	
+	const std::string overlayName = "UnityGraphics";
+	std::string version = "0.2.0";
 
 	uint32_t MAGIC = 0x0;
 	

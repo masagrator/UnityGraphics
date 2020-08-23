@@ -456,4 +456,23 @@ namespace dmntcht {
 		Utils::settings = 0;
 	}
 
+	void write_ResizeBuffers() {
+		Utils::switchcase = 3;
+		Utils::settings = 3;
+		dmntchtWriteCheatProcessMemory(Utils::widthScaleFactor_address, &Utils::widthScaleFactor, 0x4);
+		dmntchtWriteCheatProcessMemory(Utils::heightScaleFactor_address, &Utils::heightScaleFactor, 0x4);
+		dmntchtWriteCheatProcessMemory(Utils::settings_address, &Utils::settings, 0x1);
+		dmntchtWriteCheatProcessMemory(Utils::switchcase_address, &Utils::switchcase, 0x1);
+		svcSleepThread(500'000'000);
+		Utils::switchcase = 1;
+		dmntchtWriteCheatProcessMemory(Utils::settings_address, &Utils::settings, 0x1);
+		dmntchtWriteCheatProcessMemory(Utils::switchcase_address, &Utils::switchcase, 0x1);
+		svcSleepThread((1000*1000*1000)/30);
+		Utils::switchcase = 2;
+		dmntchtWriteCheatProcessMemory(Utils::settings_address, &Utils::settings, 0x1);
+		dmntchtWriteCheatProcessMemory(Utils::switchcase_address, &Utils::switchcase, 0x1);
+		Utils::switchcase = 0;
+		Utils::settings = 0;
+	}
+
 }

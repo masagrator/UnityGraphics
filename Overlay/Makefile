@@ -38,13 +38,13 @@ include $(DEVKITPRO)/libnx/switch_rules
 #   NACP building is skipped as well.
 #---------------------------------------------------------------------------------
 APP_TITLE	:=	UnityGraphics
-APP_VERSION	:=	0.1.1
+APP_VERSION	:=	0.2.0
 
 TARGET		:=	UnityGraphics-ovl
 BUILD		:=	build
-SOURCES		:=	source source/libstratosphere
+SOURCES		:=	source libs/Atmosphere-libs/libstratosphere/source/ libs/Atmosphere-libs/libstratosphere/source/dmnt
 DATA		:=	data
-INCLUDES	:=	include libs/libtesla/include include/libstratosphere
+INCLUDES	:=	include libs/libtesla/include libs/Atmosphere-libs/libstratosphere/source/ libs/Atmosphere-libs/libstratosphere/source/dmnt
 
 NO_ICON		:=  1
 

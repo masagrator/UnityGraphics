@@ -1,5 +1,5 @@
 #include <tesla.hpp>
-#include "libstratosphere/dmntcht.hpp"
+#include "dmntcht.h"
 #include "readFiles.hpp"
 
 namespace dmntcht {
@@ -38,4 +38,7 @@ namespace dmntcht {
 	
 	///Screen
 	void write_SetResolution();
+	
+	///ScalableBufferManager
+	void write_ResizeBuffers();
 }

@@ -7,20 +7,20 @@
 #include "Utils.hpp"
 
 
-class SetResolution : public tsl::Gui {
+class ResizeBuffers : public tsl::Gui {
 public:
-    SetResolution() {}
-	~SetResolution() {}
+    ResizeBuffers() {}
+	~ResizeBuffers() {}
 
     virtual tsl::elm::Element *createUI() override;
 	
 	virtual void update() override;
 };
 
-class ScreenSettings : public tsl::Gui {
+class ScalableBufferManagerSettings : public tsl::Gui {
 public:
-    ScreenSettings();
-	~ScreenSettings() {}
+    ScalableBufferManagerSettings();
+	~ScalableBufferManagerSettings() {}
 
     virtual tsl::elm::Element *createUI() override;
 	
