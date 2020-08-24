@@ -189,11 +189,11 @@ namespace UnitySettings { namespace Quality {
 	typedef void (*set_streamingMipmapsMaxFileIORequests)(uint32_t v_streamingMipmapsMaxFileIORequests);
 	uint32_t streamingMipmapsMaxFileIORequests = 0;
 
-	typedef uint32_t (*get_maxQueuedFrames)();
+	typedef int32_t (*get_maxQueuedFrames)();
 	uintptr_t ptr_get_maxQueuedFrames = 0;
-	typedef void (*set_maxQueuedFrames)(uint32_t v_maxQueuedFrames);
+	typedef void (*set_maxQueuedFrames)(int32_t v_maxQueuedFrames);
 	uintptr_t ptr_set_maxQueuedFrames = 0;
-	uint32_t maxQueuedFrames = 0;
+	int32_t maxQueuedFrames = 0;
 
 	typedef uint32_t (*GetQualityLevel)();
 	uintptr_t ptr_GetQualityLevel = 0;
@@ -548,10 +548,7 @@ namespace UnitySettings { namespace Quality {
 			
 			//"UnityEngine.QualitySettings::set_maxQueuedFrames"
 			case 65:
-				if (ptr_set_maxQueuedFrames != 0) {
-					if (maxQueuedFrames > 6) maxQueuedFrames = 0;
-					((set_maxQueuedFrames)(ptr_set_maxQueuedFrames))(maxQueuedFrames);
-				}
+				if (ptr_set_maxQueuedFrames != 0) ((set_maxQueuedFrames)(ptr_set_maxQueuedFrames))(maxQueuedFrames);
 				break;
 			
 			//"UnityEngine.QualitySettings::GetQualityLevel"

@@ -88,7 +88,7 @@ namespace Utils {
 	extern uint32_t streamingMipmapsMaxLevelReduction;
 	extern bool streamingMipmapsAddAllCameras;
 	extern uint32_t streamingMipmapsMaxFileIORequests;
-	extern uint32_t maxQueuedFrames;
+	extern int32_t maxQueuedFrames;
 	
 	extern uint32_t width;
 	extern uint32_t height;

@@ -535,7 +535,7 @@ namespace Utils {
 	uint32_t streamingMipmapsMaxLevelReduction = 0;
 	bool streamingMipmapsAddAllCameras = false;
 	uint32_t streamingMipmapsMaxFileIORequests = 0;
-	uint32_t maxQueuedFrames = 0;
+	int32_t maxQueuedFrames = 0;
 	
 	uint32_t width = 0;
 	uint32_t height = 0;

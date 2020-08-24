@@ -165,7 +165,7 @@ namespace UnitySettings { namespace Quality {
 	
 	extern uintptr_t ptr_get_maxQueuedFrames;
 	extern uintptr_t ptr_set_maxQueuedFrames;
-	extern uint32_t maxQueuedFrames;
+	extern int32_t maxQueuedFrames;
 
 	extern uintptr_t ptr_GetQualityLevel;
 	extern uintptr_t ptr_SetQualityLevel;

@@ -1916,7 +1916,7 @@ tsl::elm::Element *set_maxQueuedFrames::createUI() {
 	auto *clickableListItem2 = new tsl::elm::ListItem("Increase");
 	clickableListItem2->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-			if (Utils::maxQueuedFrames != 6) Utils::maxQueuedFrames++;
+			if (Utils::maxQueuedFrames != 2) Utils::maxQueuedFrames++;
 			dmntcht::write_maxQueuedFrames();
 			return true;
 		}
@@ -1929,7 +1929,8 @@ tsl::elm::Element *set_maxQueuedFrames::createUI() {
 	auto *clickableListItem3 = new tsl::elm::ListItem("Decrease");
 	clickableListItem3->setClickListener([](u64 keys) { 
 		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
-			if (Utils::maxQueuedFrames != 0) Utils::maxQueuedFrames--;
+			if (Utils::maxQueuedFrames == 0) Utils::maxQueuedFrames = -1;
+			else if (Utils::maxQueuedFrames > 0) Utils::maxQueuedFrames--;
 			dmntcht::write_maxQueuedFrames();
 			return true;
 		}
@@ -1952,7 +1953,7 @@ void set_maxQueuedFrames::update() {
 		Utils::closed = true;
 	}
 	dmntchtReadCheatProcessMemory(Utils::maxQueuedFrames_address, &Utils::maxQueuedFrames, 0x4);
-	sprintf(Utils::OptionsChar, "maxQueuedFrames: \n%u", Utils::maxQueuedFrames);
+	sprintf(Utils::OptionsChar, "maxQueuedFrames: %d", Utils::maxQueuedFrames);
 }
 
 ///* Quality Settings Menu
