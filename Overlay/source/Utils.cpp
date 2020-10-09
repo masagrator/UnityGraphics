@@ -13,49 +13,44 @@ namespace Utils {
 	bool Screen_read = false;
 	bool ScalableBufferManager_read = false;
 	
-	const std::string overlayName = "UnityGraphics";
-	std::string version = "0.2.0";
+	const std::string overlayName = APP_TITLE;
+	std::string version = APP_VERSION;
 
 	uint32_t MAGIC = 0x0;
 	
 	float denominator = 3;
 	
 	bool CheckPort () {
-		Result ret;
 		Handle saltysd;
-		for (int i = 0; i < 200; i++) {
-			ret = svcConnectToNamedPort(&saltysd, "InjectServ");
-			svcSleepThread(1'000'000);
-			
-			if (R_SUCCEEDED(ret)) {
+		for (int i = 0; i < 34; i++) {
+			if (R_SUCCEEDED(svcConnectToNamedPort(&saltysd, "InjectServ"))) {
 				svcCloseHandle(saltysd);
 				break;
 			}
-		}
-		if (R_FAILED(ret)) return false;
-		for (int i = 0; i < 200; i++) {
-			ret = svcConnectToNamedPort(&saltysd, "InjectServ");
-			svcSleepThread(1'000'000);
-			
-			if (R_SUCCEEDED(ret)) {
-				svcCloseHandle(saltysd);
-				break;
+			else {
+				if (i == 33) return false;
+				svcSleepThread(1'000'000);
 			}
 		}
-		if (R_FAILED(ret)) return false;
-		else return true;
+		for (int i = 0; i < 34; i++) {
+			if (R_SUCCEEDED(svcConnectToNamedPort(&saltysd, "InjectServ"))) {
+				svcCloseHandle(saltysd);
+				return true;
+			}
+			else svcSleepThread(1'000'000);
+		}
+		return false;
 	}
 	
 	bool isServiceRunning(const char *serviceName) {	
 		Handle handle;	
 		SmServiceName service_name = smEncodeName(serviceName);	
-		bool running = R_FAILED(smRegisterService(&handle, service_name, false, 1));	
-
-		svcCloseHandle(handle);	
-
-		if (!running) smUnregisterService(service_name);	
-
-		return running;	
+		if (R_FAILED(smRegisterService(&handle, service_name, false, 1))) return false;
+		else {
+			svcCloseHandle(handle);	
+			smUnregisterService(service_name);
+			return true;
+		}
 	}
 	
 }
