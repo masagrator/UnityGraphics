@@ -32,12 +32,6 @@ https://docs.unity3d.com/2019.3/Documentation/Manual/class-QualitySettings.html
 
 You can disable plugin when no game is running. Just open overlay and deactivate plugin. It is recommended to deactivate it when not running Unity game as some games can crash at boot for some unknown reason (f.e. Paper Mario).
 
-Planned:
-- Add save/load configurations
-- Add more settings and categories
-- Support more games
-- Add support for oldet Unity engines
-
 ---
 
 # This tool is for advanced users.
