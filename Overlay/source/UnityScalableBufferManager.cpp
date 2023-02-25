@@ -18,7 +18,7 @@ tsl::elm::Element *ResizeBuffers::createUI() {
 	list2->addItem(new tsl::elm::CategoryHeader("Options"));
 	auto *clickableListItem1 = new tsl::elm::ListItem("25%");
 	clickableListItem1->setClickListener([](u64 keys) { 
-		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
+		if ((keys & HidNpadButton_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
 			Utils::widthScaleFactor = 0.25;
 			Utils::heightScaleFactor = 0.25;
 			dmntcht::write_ResizeBuffers();
@@ -32,7 +32,7 @@ tsl::elm::Element *ResizeBuffers::createUI() {
 
 	auto *clickableListItem2 = new tsl::elm::ListItem("33%");
 	clickableListItem2->setClickListener([](u64 keys) { 
-		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
+		if ((keys & HidNpadButton_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
 			Utils::widthScaleFactor = 0.33;
 			Utils::heightScaleFactor = 0.33;
 			dmntcht::write_ResizeBuffers();
@@ -46,7 +46,7 @@ tsl::elm::Element *ResizeBuffers::createUI() {
 		
 	auto *clickableListItem3 = new tsl::elm::ListItem("50%");
 	clickableListItem3->setClickListener([](u64 keys) { 
-		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
+		if ((keys & HidNpadButton_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
 			Utils::widthScaleFactor = 0.5;
 			Utils::heightScaleFactor = 0.5;
 			dmntcht::write_ResizeBuffers();
@@ -60,7 +60,7 @@ tsl::elm::Element *ResizeBuffers::createUI() {
 	
 	auto *clickableListItem4 = new tsl::elm::ListItem("75%");
 	clickableListItem4->setClickListener([](u64 keys) { 
-		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
+		if ((keys & HidNpadButton_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
 			Utils::widthScaleFactor = 0.75;
 			Utils::heightScaleFactor = 0.75;
 			dmntcht::write_ResizeBuffers();
@@ -74,7 +74,7 @@ tsl::elm::Element *ResizeBuffers::createUI() {
 		
 	auto *clickableListItem5 = new tsl::elm::ListItem("100%");
 	clickableListItem5->setClickListener([](u64 keys) { 
-		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
+		if ((keys & HidNpadButton_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
 			Utils::widthScaleFactor = 1.0;
 			Utils::heightScaleFactor = 1.0;
 			dmntcht::write_ResizeBuffers();
@@ -138,7 +138,7 @@ tsl::elm::Element *ScalableBufferManagerSettings::createUI() {
 		if (Utils::widthScaleFactor_address != 0 && Utils::heightScaleFactor_address != 0) {
 			auto *ResizeBuffersauto = new tsl::elm::ListItem("ResizeBuffers", "enum");
 			ResizeBuffersauto->setClickListener([](u64 keys) { 
-				if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
+				if ((keys & HidNpadButton_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
 					tsl::changeTo<ResizeBuffers>();
 					return true;
 				}

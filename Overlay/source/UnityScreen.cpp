@@ -18,7 +18,7 @@ tsl::elm::Element *SetResolution::createUI() {
 	list2->addItem(new tsl::elm::CategoryHeader("Options"));
 	auto *clickableListItem1 = new tsl::elm::ListItem("640x360");
 	clickableListItem1->setClickListener([](u64 keys) { 
-		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
+		if ((keys & HidNpadButton_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
 			Utils::width = 640;
 			Utils::height = 360;
 			dmntcht::write_SetResolution();
@@ -32,7 +32,7 @@ tsl::elm::Element *SetResolution::createUI() {
 
 	auto *clickableListItem2 = new tsl::elm::ListItem("960x540");
 	clickableListItem2->setClickListener([](u64 keys) { 
-		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
+		if ((keys & HidNpadButton_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
 			Utils::width = 960;
 			Utils::height = 540;
 			dmntcht::write_SetResolution();
@@ -46,7 +46,7 @@ tsl::elm::Element *SetResolution::createUI() {
 		
 	auto *clickableListItem3 = new tsl::elm::ListItem("1280x720");
 	clickableListItem3->setClickListener([](u64 keys) { 
-		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
+		if ((keys & HidNpadButton_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
 			Utils::width = 1280;
 			Utils::height = 720;
 			dmntcht::write_SetResolution();
@@ -60,7 +60,7 @@ tsl::elm::Element *SetResolution::createUI() {
 	
 	auto *clickableListItem4 = new tsl::elm::ListItem("1600x900");
 	clickableListItem4->setClickListener([](u64 keys) { 
-		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
+		if ((keys & HidNpadButton_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
 			Utils::width = 1600;
 			Utils::height = 900;
 			dmntcht::write_SetResolution();
@@ -74,7 +74,7 @@ tsl::elm::Element *SetResolution::createUI() {
 		
 	auto *clickableListItem5 = new tsl::elm::ListItem("1920x1080");
 	clickableListItem5->setClickListener([](u64 keys) { 
-		if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
+		if ((keys & HidNpadButton_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
 			Utils::width = 1920;
 			Utils::height = 1080;
 			dmntcht::write_SetResolution();
@@ -139,7 +139,7 @@ tsl::elm::Element *ScreenSettings::createUI() {
 		if (Utils::width_address != 0 && Utils::height_address != 0) {
 			auto *SetResolutionauto = new tsl::elm::ListItem("SetResolution", "enum");
 			SetResolutionauto->setClickListener([](u64 keys) { 
-				if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
+				if ((keys & HidNpadButton_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
 					tsl::changeTo<SetResolution>();
 					return true;
 				}

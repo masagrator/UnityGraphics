@@ -61,7 +61,7 @@ public:
 			list->addItem(new tsl::elm::CategoryHeader("Categories"));
 			auto *Qualityauto = new tsl::elm::ListItem("Quality");
 			Qualityauto->setClickListener([](u64 keys) { 
-				if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
+				if ((keys & HidNpadButton_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
 					tsl::changeTo<QualitySettings>();
 					return true;
 				}
@@ -72,7 +72,7 @@ public:
 			
 			auto *Screenauto = new tsl::elm::ListItem("Screen");
 			Screenauto->setClickListener([](u64 keys) { 
-				if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
+				if ((keys & HidNpadButton_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
 					tsl::changeTo<ScreenSettings>();
 					return true;
 				}
@@ -83,7 +83,7 @@ public:
 			
 			auto *ScalableBufferManagerauto = new tsl::elm::ListItem("ScalableBufferManager");
 			ScalableBufferManagerauto->setClickListener([](u64 keys) { 
-				if ((keys & KEY_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
+				if ((keys & HidNpadButton_A) && Utils::PluginRunning == true && Utils::dmnt_cht == true) {
 					tsl::changeTo<ScalableBufferManagerSettings>();
 					return true;
 				}
@@ -96,7 +96,7 @@ public:
 		else if (SaltySD == true && plugin == true && Utils::check == false) {
 			auto *clickableListItem = new tsl::elm::ListItem("(De)activate plugin");
 			clickableListItem->setClickListener([](u64 keys) { 
-				if (keys & KEY_A) {
+				if (keys & HidNpadButton_A) {
 					if (bak == false) {
 						rename("sdmc:/SaltySD/plugins/UnityGraphics.elf", "sdmc:/SaltySD/plugins/UnityGraphics.elf.bak");
 						bak = true;
@@ -133,7 +133,7 @@ public:
 	}
 
 	// Called once every frame to handle inputs not handled by other UI elements
-	virtual bool handleInput(u64 keysDown, u64 keysHeld, touchPosition touchInput, JoystickPosition leftJoyStick, JoystickPosition rightJoyStick) override {
+	virtual bool handleInput(u64 keysDown, u64 keysHeld, const HidTouchState &touchPos, HidAnalogStickState joyStickPosLeft, HidAnalogStickState joyStickPosRight) override {
 		return false;   // Return true here to singal the inputs have been consumed
 	}
 };
